@@ -1,13 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage ('Checkout') {
-            steps{
-                 checkout([$class: 'GitSCM', branches: [[name: '*/main']],
-                    userRemoteConfigs: [[url: 'https://github.com/Philipp1497/CI-Test.git']]])
-            }
-            
-        }
         stage ('Clear bin directory') {
             steps{
                 bat """
@@ -38,13 +31,6 @@ pipeline {
             }
         }
 		
-		stage ('results'){
-			steps{
-				
-					xunit tools: [Custom(customXSL: 'unity.xsl', pattern: 'report.xml', skipNoTestFiles: false, stopProcessingIfError: true)]
-					cobertura coberturaReportFile: 'GcovCoverageCobertura.xml'
-				
-			}
-		}
+
     }
 }
