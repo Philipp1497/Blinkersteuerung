@@ -10,7 +10,7 @@
 // $TI Release: DSP280x Header Files V1.50 $
 // $Release Date: September 10, 2007 $
 //###########################################################################
-#ifndef CEEDLING
+
 #ifndef DSP280X_DEFAULT_ISR_H
 #define DSP280X_DEFAULT_ISR_H
 
@@ -126,7 +126,7 @@ interrupt void INT_NOTUSED_ISR(void);    // for unused interrupts
 #endif /* extern "C" */
 
 #endif    // end of DSP280x_DEFAULT_ISR_H definition
-#endif
+
 //===========================================================================
 // End of file.
 //===========================================================================

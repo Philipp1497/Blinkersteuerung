@@ -76,14 +76,14 @@ volatile struct CSM_REGS CsmRegs;
 
 
 
-/*----------------------------------------
+//----------------------------------------
 #ifdef __cplusplus 
 #pragma DATA_SECTION("DevEmuRegsFile") 
 #else
 #pragma DATA_SECTION(DevEmuRegs,"DevEmuRegsFile");
 #endif
 volatile struct DEV_EMU_REGS DevEmuRegs;
-*/
+
 //----------------------------------------
 #ifdef __cplusplus 
 #pragma DATA_SECTION("ECanaRegsFile") 
@@ -363,14 +363,14 @@ volatile struct SPI_REGS SpicRegs;
 #endif
 volatile struct SPI_REGS SpidRegs;
 
-/*----------------------------------------
+//----------------------------------------
 #ifdef __cplusplus 
 #pragma DATA_SECTION("SysCtrlRegsFile") 
 #else
 #pragma DATA_SECTION(SysCtrlRegs,"SysCtrlRegsFile");
 #endif
 volatile struct SYS_CTRL_REGS SysCtrlRegs;
-*/
+
 //----------------------------------------
 #ifdef __cplusplus 
 #pragma DATA_SECTION("FlashRegsFile") 

@@ -215,8 +215,9 @@ void InitSysCtrl(void)
 
    // Initialize the PLL control: PLLCR and CLKINDIV
    // DSP28_PLLCR and DSP28_CLKINDIV are defined in DSP280x_Examples.h
+   #ifndef CEEDLING
    InitPll(DSP28_PLLCR,DSP28_CLKINDIV);
-
+   #endif
    // Initialize the peripheral clocks
    InitPeripheralClocks();
 }

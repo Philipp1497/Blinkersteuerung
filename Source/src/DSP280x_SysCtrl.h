@@ -10,9 +10,6 @@
 // $TI Release: DSP280x Header Files V1.50 $
 // $Release Date: September 10, 2007 $
 //###########################################################################
-#include "DSP280x_Device.h"     // Headerfile Include File
-#include "DSP280x_Examples.h"   // Examples Include File
-
 
 #ifndef DSP280x_SYS_CTRL_H
 #define DSP280x_SYS_CTRL_H
