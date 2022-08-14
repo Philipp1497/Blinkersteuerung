@@ -33,7 +33,9 @@ pipeline {
 		
 		stage ('run ceedling tests') {
 			steps{
-				bat "test.bat"
+				bat """
+					ceedling gcov:all utils:gcov
+				"""
 			}
 		}
     }
