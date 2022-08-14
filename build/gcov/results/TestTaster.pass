@@ -1,0 +1,30 @@
+---
+:source:
+  :path: Source/test
+  :file: TestTaster.c
+:successes:
+- :test: testZuendungstaster
+  :line: 22
+  :message: ''
+  :unity_test_time: 0
+- :test: testWarntaster
+  :line: 27
+  :message: ''
+  :unity_test_time: 0
+- :test: testRechtsblinken
+  :line: 32
+  :message: ''
+  :unity_test_time: 0
+- :test: testLinksblinken
+  :line: 37
+  :message: ''
+  :unity_test_time: 0
+:failures: []
+:ignores: []
+:counts:
+  :total: 4
+  :passed: 4
+  :failed: 0
+  :ignored: 0
+:stdout: []
+:time: 0.04799099999945611

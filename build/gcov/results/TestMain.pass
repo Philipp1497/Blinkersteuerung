@@ -1,0 +1,22 @@
+---
+:source:
+  :path: Source/test
+  :file: TestMain.c
+:successes:
+- :test: testAppMain
+  :line: 23
+  :message: ''
+  :unity_test_time: 0
+- :test: testGpioSelect
+  :line: 31
+  :message: ''
+  :unity_test_time: 0
+:failures: []
+:ignores: []
+:counts:
+  :total: 2
+  :passed: 2
+  :failed: 0
+  :ignored: 0
+:stdout: []
+:time: 0.03931389999343082
