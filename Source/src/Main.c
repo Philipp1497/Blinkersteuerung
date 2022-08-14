@@ -24,7 +24,7 @@
 extern int zuendung_aktiv;
 
 //interrupt void pin_26_isr(void);
-void Gpio_select(void);
+//void Gpio_select(void);
 #ifndef CEEDLING
 int AppMain(void)
 {
@@ -44,8 +44,12 @@ int AppMain(void)
    }
    return 0;
 }
-#endif
-#ifdef CEEDLING
+
+int main(void)
+{
+   return AppMain();
+}
+#else
 int AppMain(void)
 {
    init();
@@ -63,12 +67,6 @@ int AppMain(void)
 }
 #endif
 
-#ifndef CEEDLING
-int main(void)
-{
-   return AppMain();
-}
-#endif
 void Gpio_select(void)
 {
     EALLOW;
