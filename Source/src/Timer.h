@@ -2,5 +2,5 @@
 #include "DSP280x_Examples.h"   // DSP280x Examples Include File"
 #include "Taster.h"
 
-
-interrupt void cpu_timer0_isr(void);
+void cpu_timer0_isr(void);
+void blinken(long blinkmode);

@@ -1,0 +1,140 @@
+---
+
+# Notes:
+# Sample project C code is not presently written to produce a release artifact.
+# As such, release build options are disabled.
+# This sample, therefore, only demonstrates running a collection of unit tests.
+
+:gcov:
+ :html_report_type:  detailed
+ :xml_report: true
+
+:project:
+  :use_exceptions: FALSE
+  :use_test_preprocessor: TRUE
+  :use_auxiliary_dependencies: TRUE
+  :build_root: build
+#  :release_build: TRUE
+  :test_file_prefix: Test
+  :which_ceedling: gem
+  :ceedling_version: 0.31.1
+  :default_tasks:
+    - test:all
+
+#:test_build:
+#  :use_assembly: TRUE
+
+#:release_build:
+#  :output: MyApp.out
+#  :use_assembly: FALSE
+
+:environment:
+
+:extension:
+  :executable: .out
+
+:paths:
+  :test:
+    - +:Source/test/**
+    - -:Source/test/support
+  :source:
+    - Source/src/**
+  :support:
+    - Source/test/support
+#    - src/CompilerIncludes
+  :libraries: []
+
+:defines:
+  # in order to add common defines:
+  #  1) remove the trailing [] from the :common: section
+  #  2) add entries to the :common: section (e.g. :test: has TEST defined)
+  :common: &common_defines []
+  :test:
+    - *common_defines
+    - TEST
+    - CEEDLING
+    - UNITY_SUPPORT_64
+    - __TMS320C2000__=1
+    - __TMS320C28X__=1
+    - __TMS320C28XX__=1
+    - __PTRDIFF_T_TYPE__=long
+    - __SIZE_T_TYPE__="unsigned long"
+    - __WCHAR_T_TYPE__="unsigned int"
+    - __uint8_t=short
+    - __int8_t=short
+    - __asm(x)
+    - __cregister
+    - EALLOW
+    - EDIS
+    - EINT
+    - ERTM
+    - DINT
+    - __interrupt
+    - __TI_EABI__
+    - asm(x)
+    - byte_peripheral
+#    - const=
+    - cregister
+    - far
+    - interrupt=
+#    - volatile
+  :test_preprocess:
+    - *common_defines
+    - TEST
+
+:cmock:
+  :when_no_prototypes: :warn
+  :enforce_strict_ordering: TRUE
+  :plugins:
+    - :ignore
+  :treat_as:
+    uint8:    HEX8
+    uint16:   HEX16
+    uint32:   UINT32
+    int8:     INT8
+    bool:     UINT8
+
+# Add -gcov to the plugins list to make sure of the gcov plugin
+# You will need to have gcov and gcovr both installed to make it work.
+# For more information on these options, see docs in plugins/gcov
+#:gcov:
+ # :reports:
+  #  - HtmlDetailed
+  #:gcovr:
+   # :html_medium_threshold: 75
+    #:html_high_threshold: 90
+
+#:tools:
+#  :test_compiler:
+#    :executable: test/cl2000.exe
+#    :name: 'C2000'
+#    :arguments:
+#    - -v28
+#    - -ml
+#    - -mt
+#    - --include_path="src"
+#    - --include_path="src/CompilerIncludes
+#    - --include_path="src/DeviceHeader"
+#    - -c src/Init.c                      #source code input file (Ruby method call param list sub)
+ #   - -o ${2}  
+# LIBRARIES
+# These libraries are automatically injected into the build process. Those specified as
+# common will be used in all types of builds. Otherwise, libraries can be injected in just
+# tests or releases. These options are MERGED with the options in supplemental yaml files.
+:libraries:
+  :placement: :end
+  :flag: "-l${1}"
+  :path_flag: "-L ${1}"
+  :system: []    # for example, you might list 'm' to grab the math library
+  :test: []
+  :release: []
+
+:plugins:
+  :load_paths:
+    - "#{Ceedling.load_path}"
+  :enabled:
+    - gcov
+    - xml_tests_report
+    - stdout_pretty_tests_report
+    - module_generator
+...

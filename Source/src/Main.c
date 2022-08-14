@@ -3,33 +3,37 @@
 #include "Init.h"
 #include "Taster.h"
 
-#define     BUT     GpioDataRegs.GPADAT.bit.GPIO9
+/*#define     BUT     GpioDataRegs.GPADAT.bit.GPIO9
 #define     LED_ON  GpioDataRegs.GPASET.bit.GPIO20
 #define     LED_OFF GpioDataRegs.GPASET.all |= BIT11
+*/
 
+/**
 
+    Gpio Belegung:
 
+    Warnblinktaster:    Gpio23 = Versorgung ,   Gpio26 = Signal
 
+    Rechtsblinktaster:  Gpio7  = Versorgung ,   Gpio22 = Signal
 
-extern int pressed;
+    Linksblinktaster:   Gpio3  = Versorgung ,   Gpio17 = Signal
+
+    Versorgung LEDS:    Gpio20 , Gpio19
+
+**/
+extern int zuendung_aktiv;
 
 //interrupt void pin_26_isr(void);
 void Gpio_select(void);
-
-
-
-
-void main(void)
+#ifndef CEEDLING
+int AppMain(void)
 {
-
-
    init();
    Gpio_select();
 
-   for(;;)
+   while(1)
    {
-
-       if(pressed == 1)
+       if(zuendung_aktiv == 1)
        {
            GpioDataRegs.GPACLEAR.all |= BIT11; //Status Led an
        }
@@ -38,9 +42,33 @@ void main(void)
            GpioDataRegs.GPASET.all |= BIT11;
        }
    }
+   return 0;
+}
+#endif
+#ifdef CEEDLING
+int AppMain(void)
+{
+   init();
+   Gpio_select();
 
-} 
+   if(zuendung_aktiv == 1)
+   {
+	   GpioDataRegs.GPACLEAR.all |= BIT11; //Status Led an
+   }
+   else
+   {
+	   GpioDataRegs.GPASET.all |= BIT11;
+   }
+   return 0;
+}
+#endif
 
+#ifndef CEEDLING
+int main(void)
+{
+   return AppMain();
+}
+#endif
 void Gpio_select(void)
 {
     EALLOW;

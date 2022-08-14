@@ -24,9 +24,11 @@ extern "C" {
 // PIE Interrupt Vector Table Definition:
 //
 // Create a user type called PINT (pointer to interrupt):
-
-typedef interrupt void(*PINT)(void);
-
+#ifdef CEEDLING
+	typedef interrupt void (*PINT)(void);
+#else
+	typedef interrupt void (*PINT)(void);
+#endif
 // Define Vector Table:
 struct PIE_VECT_TABLE {
 

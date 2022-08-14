@@ -1,0 +1,6 @@
+Splint 3.1.1 --- 12 April 2003
+
+C:\Blinkersteuerung\Source\DeviceHeader\DSP280x_PieVect.h(28,23): Parse Error:
+    Suspect missing struct or union keyword: interrupt :
+    int. (For help on parse errors, see splint -help parseerrors.)
+*** Cannot continue.

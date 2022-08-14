@@ -3,37 +3,36 @@
 
 
 extern int counter;
+extern int blinkcounter;
 int flag = 0;
 
-int richtungs_blinken_flag = 0;
-//int rechts_blinken_flag = 0;
-//int links_blinken_flag = 0;
-int pressed = 0;
+int richtungs_blinken_flag = 0; // 1: rechts blinken  2: links blinken
+int zuendung_aktiv = 0;
 
 int zuendung = 1;
 int warn_zustand = 1;
-int zustand = 1;
+int rechts_blink_zustand = 1;
 int links_blink_zustand = 1;
 
 void zuendungstaster(void)
 {
-    if(zuendung == 1 && GpioDataRegs.GPADAT.bit.GPIO9 == 0)   //Taster wird gedrueckt (steigende Flanke)
+    if(zuendung == 1 && GpioDataRegs.GPADAT.bit.GPIO9 == 0)   //Taster wird gedrueckt (fallende Flanke)
         {
         zuendung = 2;
-            if(pressed == 0)
+            if(zuendung_aktiv == 0)
             {
-                pressed = 1;
+                zuendung_aktiv = 1;
             }
             else
             {
-                pressed = 0;
+                zuendung_aktiv = 0;
             }
         }
         else if (zuendung == 2 && GpioDataRegs.GPADAT.bit.GPIO9 == 0)   //Taster wird gehalten
         {
             zuendung = 3;
         }
-        else if (zuendung == 3 && GpioDataRegs.GPADAT.bit.GPIO9 == 1)   //Taster wird losgelassen (fallende Flanke)
+        else if (zuendung == 3 && GpioDataRegs.GPADAT.bit.GPIO9 == 1)   //Taster wird losgelassen (steigende Flanke)
         {
             zuendung = 4;
         }
@@ -79,18 +78,20 @@ void warntaster(void)
 
 void rechtsblinken(void)
 {
-    if(zustand == 1 && GpioDataRegs.GPADAT.bit.GPIO22 == 0)   //Taster wird gedrueckt (steigende Flanke)
+    if(rechts_blink_zustand == 1 && GpioDataRegs.GPADAT.bit.GPIO22 == 0)   //Taster wird gedrueckt (steigende Flanke)
     {
-        zustand = 2;
+        rechts_blink_zustand = 2;
         switch(richtungs_blinken_flag){
         case 0:
             richtungs_blinken_flag = 1;
             break;
         case 1:
-            richtungs_blinken_flag = 0;
+            counter = 1;
+            blinkcounter = 0;
             break;
         case 2:
-            counter = 0;
+            counter = 1;
+            blinkcounter = 0;
             richtungs_blinken_flag = 1;
             break;
         }
@@ -103,17 +104,18 @@ void rechtsblinken(void)
 //            richtungs_blinken_flag = 0;
 //        }
     }
-    else if (zustand == 2 && GpioDataRegs.GPADAT.bit.GPIO22 == 0)   //Taster wird gehalten
+    else if (rechts_blink_zustand == 2 && GpioDataRegs.GPADAT.bit.GPIO22 == 0)   //Taster wird gehalten
     {
-         zustand = 3;
+        rechts_blink_zustand = 3;
     }
-    else if (zustand == 3 && GpioDataRegs.GPADAT.bit.GPIO22 == 1)   //Taster wird losgelassen (fallende Flanke)
+    else if (rechts_blink_zustand == 3 && GpioDataRegs.GPADAT.bit.GPIO22 == 1)   //Taster wird losgelassen (fallende Flanke)
     {
-        zustand = 4;
+        rechts_blink_zustand = 4;
+        //richtungs_blinken_flag = 0;
     }
-    else if (zustand == 4 && GpioDataRegs.GPADAT.bit.GPIO22 == 1)   //Taster losgelassen
+    else if (rechts_blink_zustand == 4 && GpioDataRegs.GPADAT.bit.GPIO22 == 1)   //Taster losgelassen
     {
-        zustand = 1;
+        rechts_blink_zustand = 1;
     }
 }
 
@@ -128,11 +130,13 @@ void linksblinken(void)
             richtungs_blinken_flag = 2;
             break;
         case 1:
-            counter = 0;
+            counter = 1;
+            blinkcounter = 0;
             richtungs_blinken_flag = 2;
             break;
         case 2:
-            richtungs_blinken_flag = 0;
+            counter = 1;
+            blinkcounter = 0;
             break;
         }
 //        if(richtungs_blinken_flag == 0)
@@ -151,6 +155,7 @@ void linksblinken(void)
     else if (links_blink_zustand == 3 && GpioDataRegs.GPADAT.bit.GPIO17 == 1)   //Taster wird losgelassen (fallende Flanke)
     {
         links_blink_zustand = 4;
+        //richtungs_blinken_flag = 0;
     }
     else if (links_blink_zustand == 4 && GpioDataRegs.GPADAT.bit.GPIO17 == 1)   //Taster losgelassen
     {

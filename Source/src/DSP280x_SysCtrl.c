@@ -14,8 +14,6 @@
 // $TI Release: DSP280x Header Files V1.50 $
 // $Release Date: September 10, 2007 $
 //###########################################################################
-
-
 #include "DSP280x_Device.h"     // Headerfile Include File
 #include "DSP280x_Examples.h"   // Examples Include File
 
@@ -25,86 +23,8 @@
 
 #pragma CODE_SECTION(InitFlash, "ramfuncs");
 
-//---------------------------------------------------------------------------
-// InitSysCtrl:
-//---------------------------------------------------------------------------
-// This function initializes the System Control registers to a known state.
-// - Disables the watchdog
-// - Set the PLLCR for proper SYSCLKOUT frequency
-// - Set the pre-scaler for the high and low frequency peripheral clocks
-// - Enable the clocks to the peripherals
-
-void InitSysCtrl(void)
-{
-
-   // Disable the watchdog
-   DisableDog();
-
-   // Initialize the PLL control: PLLCR and CLKINDIV
-   // DSP28_PLLCR and DSP28_CLKINDIV are defined in DSP280x_Examples.h
-   InitPll(DSP28_PLLCR,DSP28_CLKINDIV);
-
-   // Initialize the peripheral clocks
-   InitPeripheralClocks();
-}
 
 
-//---------------------------------------------------------------------------
-// Example: InitFlash:
-//---------------------------------------------------------------------------
-// This function initializes the Flash Control registers
-
-//                   CAUTION
-// This function MUST be executed out of RAM. Executing it
-// out of OTP/Flash will yield unpredictable results
-
-void InitFlash(void)
-{
-   EALLOW;
-   //Enable Flash Pipeline mode to improve performance
-   //of code executed from Flash.
-   FlashRegs.FOPT.bit.ENPIPE = 1;
-
-   //                CAUTION
-   //Minimum waitstates required for the flash operating
-   //at a given CPU rate must be characterized by TI.
-   //Refer to the datasheet for the latest information.
-
-   //Set the Paged Waitstate for the Flash
-   FlashRegs.FBANKWAIT.bit.PAGEWAIT = 3;
-
-   //Set the Random Waitstate for the Flash
-   FlashRegs.FBANKWAIT.bit.RANDWAIT = 3;
-
-   //Set the Waitstate for the OTP
-   FlashRegs.FOTPWAIT.bit.OTPWAIT = 5;
-
-   //                CAUTION
-   //ONLY THE DEFAULT VALUE FOR THESE 2 REGISTERS SHOULD BE USED
-   FlashRegs.FSTDBYWAIT.bit.STDBYWAIT = 0x01FF;
-   FlashRegs.FACTIVEWAIT.bit.ACTIVEWAIT = 0x01FF;
-   EDIS;
-
-   //Force a pipeline flush to ensure that the write to
-   //the last register configured occurs before returning.
-
-   asm(" RPT #7 || NOP");
-}
-
-
-//---------------------------------------------------------------------------
-// Example: ServiceDog:
-//---------------------------------------------------------------------------
-// This function resets the watchdog timer.
-// Enable this function for using ServiceDog in the application
-
-void ServiceDog(void)
-{
-    EALLOW;
-    SysCtrlRegs.WDKEY = 0x0055;
-    SysCtrlRegs.WDKEY = 0x00AA;
-    EDIS;
-}
 
 //---------------------------------------------------------------------------
 // Example: DisableDog:
@@ -274,51 +194,33 @@ void InitPeripheralClocks(void)
    EDIS;
 }
 
-//---------------------------------------------------------------------------
-// Example: CsmUnlock:
-//---------------------------------------------------------------------------
-// This function unlocks the CSM. User must replace 0xFFFF's with current 
-// password for the DSP. Returns 1 if unlock is successful.
 
-#define STATUS_FAIL          0
-#define STATUS_SUCCESS       1
 
-Uint16 CsmUnlock()
+
+
+//---------------------------------------------------------------------------
+// InitSysCtrl:
+//---------------------------------------------------------------------------
+// This function initializes the System Control registers to a known state.
+// - Disables the watchdog
+// - Set the PLLCR for proper SYSCLKOUT frequency
+// - Set the pre-scaler for the high and low frequency peripheral clocks
+// - Enable the clocks to the peripherals
+
+void InitSysCtrl(void)
 {
-    volatile Uint16 temp;
 
-    // Load the key registers with the current password. The 0xFFFF's are dummy 
-	// passwords.  User should replace them with the correct password for the DSP. 
+   // Disable the watchdog
+   DisableDog();
 
-    EALLOW;
-    CsmRegs.KEY0 = 0xFFFF;
-    CsmRegs.KEY1 = 0xFFFF;
-    CsmRegs.KEY2 = 0xFFFF;
-    CsmRegs.KEY3 = 0xFFFF;
-    CsmRegs.KEY4 = 0xFFFF;
-    CsmRegs.KEY5 = 0xFFFF;
-    CsmRegs.KEY6 = 0xFFFF;
-    CsmRegs.KEY7 = 0xFFFF;
-    EDIS;
+   // Initialize the PLL control: PLLCR and CLKINDIV
+   // DSP28_PLLCR and DSP28_CLKINDIV are defined in DSP280x_Examples.h
+   InitPll(DSP28_PLLCR,DSP28_CLKINDIV);
 
-    // Perform a dummy read of the password locations
-    // if they match the key values, the CSM will unlock
-
-    temp = CsmPwl.PSWD0;
-    temp = CsmPwl.PSWD1;
-    temp = CsmPwl.PSWD2;
-    temp = CsmPwl.PSWD3;
-    temp = CsmPwl.PSWD4;
-    temp = CsmPwl.PSWD5;
-    temp = CsmPwl.PSWD6;
-    temp = CsmPwl.PSWD7;
-
-    // If the CSM unlocked, return succes, otherwise return
-    // failure.
-    if (CsmRegs.CSMSCR.bit.SECURE == 0) return STATUS_SUCCESS;
-    else return STATUS_FAIL;
-
+   // Initialize the peripheral clocks
+   InitPeripheralClocks();
 }
+
 
 
 //===========================================================================
