@@ -35,7 +35,7 @@ pipeline {
 			steps{
 				bat """
 					cd C:\\Blinkersteuerung
-					start.bat
+					test.bat
 				"""
 			}
 		}
