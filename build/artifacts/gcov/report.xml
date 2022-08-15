@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<TestRun>
+	<FailedTests/>
+	<SuccessfulTests>
+		<Test id="1">
+			<Name>test/TestInit.c::testInit</Name>
+		</Test>
+		<Test id="2">
+			<Name>test/TestMain.c::testAppMain</Name>
+		</Test>
+		<Test id="3">
+			<Name>test/TestMain.c::testGpioSelect</Name>
+		</Test>
+		<Test id="4">
+			<Name>test/TestTaster.c::testZuendungstaster</Name>
+		</Test>
+		<Test id="5">
+			<Name>test/TestTaster.c::testWarntaster</Name>
+		</Test>
+		<Test id="6">
+			<Name>test/TestTaster.c::testRechtsblinken</Name>
+		</Test>
+		<Test id="7">
+			<Name>test/TestTaster.c::testLinksblinken</Name>
+		</Test>
+		<Test id="8">
+			<Name>test/TestTimer.c::testTimerIsr</Name>
+		</Test>
+		<Test id="9">
+			<Name>test/TestTimer.c::testBlinken</Name>
+		</Test>
+	</SuccessfulTests>
+	<IgnoredTests/>
+	<Statistics>
+		<Tests>9</Tests>
+		<Ignores>0</Ignores>
+		<FailuresTotal>0</FailuresTotal>
+		<Errors>0</Errors>
+		<Failures>0</Failures>
+	</Statistics>
+</TestRun>
