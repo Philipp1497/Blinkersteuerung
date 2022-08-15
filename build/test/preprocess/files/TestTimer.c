@@ -2,7 +2,7 @@
 #include "Source/src/DSP280x_CpuTimers.c"
 #include "Source/src/DSP280x_PieCtrl.c"
 #include "Source/src/Timer.h"
-#include "build/test/mocks/MockTaster.h"
+#include "MockTaster.h"
 #include "Source/src/DSP280x_Examples.h"
 #include "Source/src/DSP280x_Device.h"
 #include "test/support/UnityHelper.h"

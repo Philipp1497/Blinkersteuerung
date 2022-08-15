@@ -2,7 +2,7 @@
 #include "Source/src/DSP280x_GlobalVariableDefs.c"
 #include "Source/src/DSP280x_CpuTimers.c"
 #include "Source/src/DSP280x_PieCtrl.c"
-#include "build/test/mocks/MockInit.h"
+#include "MockInit.h"
 #include "Source/src/Timer.h"
 #include "Source/src/Taster.h"
 #include "Source/src/DSP280x_Examples.h"
