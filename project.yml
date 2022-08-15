@@ -38,7 +38,7 @@
     - +:Source/test/**
     - -:Source/test/support
   :source:
-    - Source/src/**
+    - Source/src
   :support:
     - Source/test/support
 #    - src/CompilerIncludes
