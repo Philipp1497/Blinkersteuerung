@@ -34,7 +34,8 @@ pipeline {
 		stage ('run ceedling tests') {
 			steps{
 				bat """
-					ceedling test:all
+					start ceedling test:all
+					pause
 				"""
 			}
 		}
