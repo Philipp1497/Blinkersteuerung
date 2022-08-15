@@ -34,8 +34,8 @@ pipeline {
 		stage ('run ceedling tests') {
 			steps{
 				bat """
-					start ceedling test:all
-					pause
+					C:\\Ruby30-x64\\bin\\setrbvars.cmd
+					ceedling gcov:all utils:gcov
 				"""
 			}
 		}
