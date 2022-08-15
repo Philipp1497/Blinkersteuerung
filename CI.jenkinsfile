@@ -34,7 +34,7 @@ pipeline {
 		stage ('run ceedling tests') {
 			steps{
 				bat """
-					cd C:\\Blinkersteuerung
+					cd C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\Blinkersteuerung\\CI
 					test.bat
 				"""
 			}
@@ -43,8 +43,8 @@ pipeline {
 		stage ('results'){
 			steps{
 				
-					xunit tools: [Custom(customXSL: 'unity.xsl', pattern: '..\\..\\..\\..\\..\\..\\..\\..\\..\\Blinkersteuerung\\build\\artifacts\\gcov\\report.xml', skipNoTestFiles: false, stopProcessingIfError: true)]
-					cobertura coberturaReportFile: '..\\..\\..\\..\\..\\..\\..\\..\\..\\Blinkersteuerung\\build\\artifacts\\gcov\\GcovCoverageCobertura.xml'
+					xunit tools: [Custom(customXSL: 'unity.xsl', pattern: 'C:\\Blinkersteuerung\\build\\artifacts\\gcov\\report.xml', skipNoTestFiles: false, stopProcessingIfError: true)]
+					cobertura coberturaReportFile: 'C:\\Blinkersteuerung\\build\\artifacts\\gcov\\GcovCoverageCobertura.xml'
 				
 			}
 		}
