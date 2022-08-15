@@ -35,8 +35,11 @@ pipeline {
 			steps{
 				bat """
 					C:\\Ruby30-x64\\bin\\setrbvars.cmd
+				"""
+				bat """
 					ceedling gcov:all utils:gcov
 				"""
+				
 			}
 		}
     }
