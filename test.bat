@@ -1,2 +1,2 @@
-ceedling test:all
+ceedling gcov:all utils:gcov
 rem pause
