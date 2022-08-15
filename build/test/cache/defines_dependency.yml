@@ -311,3 +311,263 @@ build/test/mocks/MockTaster.c:
 - cregister=
 - far
 - interrupt=
+Source/src/DSP280x_DefaultIsr.c:
+- TEST
+- CEEDLING
+- UNITY_SUPPORT_64
+- __TMS320C2000__=1
+- __TMS320C28X__=1
+- __TMS320C28XX__=1
+- __PTRDIFF_T_TYPE__=long
+- __SIZE_T_TYPE__="unsigned long"
+- __WCHAR_T_TYPE__="unsigned int"
+- __uint8_t=short
+- __int8_t=short
+- __asm(x)
+- __cregister
+- EALLOW
+- EDIS
+- EINT
+- ERTM
+- DINT
+- __interrupt
+- __TI_EABI__
+- asm(x)
+- byte_peripheral
+- cregister=
+- far
+- interrupt=
+Source/src/DSP280x_PieVect.c:
+- TEST
+- CEEDLING
+- UNITY_SUPPORT_64
+- __TMS320C2000__=1
+- __TMS320C28X__=1
+- __TMS320C28XX__=1
+- __PTRDIFF_T_TYPE__=long
+- __SIZE_T_TYPE__="unsigned long"
+- __WCHAR_T_TYPE__="unsigned int"
+- __uint8_t=short
+- __int8_t=short
+- __asm(x)
+- __cregister
+- EALLOW
+- EDIS
+- EINT
+- ERTM
+- DINT
+- __interrupt
+- __TI_EABI__
+- asm(x)
+- byte_peripheral
+- cregister=
+- far
+- interrupt=
+Source/src/Init.c:
+- TEST
+- CEEDLING
+- UNITY_SUPPORT_64
+- __TMS320C2000__=1
+- __TMS320C28X__=1
+- __TMS320C28XX__=1
+- __PTRDIFF_T_TYPE__=long
+- __SIZE_T_TYPE__="unsigned long"
+- __WCHAR_T_TYPE__="unsigned int"
+- __uint8_t=short
+- __int8_t=short
+- __asm(x)
+- __cregister
+- EALLOW
+- EDIS
+- EINT
+- ERTM
+- DINT
+- __interrupt
+- __TI_EABI__
+- asm(x)
+- byte_peripheral
+- cregister=
+- far
+- interrupt=
+Source/src/DSP280x_PieCtrl.c:
+- TEST
+- CEEDLING
+- UNITY_SUPPORT_64
+- __TMS320C2000__=1
+- __TMS320C28X__=1
+- __TMS320C28XX__=1
+- __PTRDIFF_T_TYPE__=long
+- __SIZE_T_TYPE__="unsigned long"
+- __WCHAR_T_TYPE__="unsigned int"
+- __uint8_t=short
+- __int8_t=short
+- __asm(x)
+- __cregister
+- EALLOW
+- EDIS
+- EINT
+- ERTM
+- DINT
+- __interrupt
+- __TI_EABI__
+- asm(x)
+- byte_peripheral
+- cregister=
+- far
+- interrupt=
+Source/src/DSP280x_CpuTimers.c:
+- TEST
+- CEEDLING
+- UNITY_SUPPORT_64
+- __TMS320C2000__=1
+- __TMS320C28X__=1
+- __TMS320C28XX__=1
+- __PTRDIFF_T_TYPE__=long
+- __SIZE_T_TYPE__="unsigned long"
+- __WCHAR_T_TYPE__="unsigned int"
+- __uint8_t=short
+- __int8_t=short
+- __asm(x)
+- __cregister
+- EALLOW
+- EDIS
+- EINT
+- ERTM
+- DINT
+- __interrupt
+- __TI_EABI__
+- asm(x)
+- byte_peripheral
+- cregister=
+- far
+- interrupt=
+Source/src/DSP280x_GlobalVariableDefs.c:
+- TEST
+- CEEDLING
+- UNITY_SUPPORT_64
+- __TMS320C2000__=1
+- __TMS320C28X__=1
+- __TMS320C28XX__=1
+- __PTRDIFF_T_TYPE__=long
+- __SIZE_T_TYPE__="unsigned long"
+- __WCHAR_T_TYPE__="unsigned int"
+- __uint8_t=short
+- __int8_t=short
+- __asm(x)
+- __cregister
+- EALLOW
+- EDIS
+- EINT
+- ERTM
+- DINT
+- __interrupt
+- __TI_EABI__
+- asm(x)
+- byte_peripheral
+- cregister=
+- far
+- interrupt=
+Source/src/DSP280x_SysCtrl.c:
+- TEST
+- CEEDLING
+- UNITY_SUPPORT_64
+- __TMS320C2000__=1
+- __TMS320C28X__=1
+- __TMS320C28XX__=1
+- __PTRDIFF_T_TYPE__=long
+- __SIZE_T_TYPE__="unsigned long"
+- __WCHAR_T_TYPE__="unsigned int"
+- __uint8_t=short
+- __int8_t=short
+- __asm(x)
+- __cregister
+- EALLOW
+- EDIS
+- EINT
+- ERTM
+- DINT
+- __interrupt
+- __TI_EABI__
+- asm(x)
+- byte_peripheral
+- cregister=
+- far
+- interrupt=
+Source/src/Taster.c:
+- TEST
+- CEEDLING
+- UNITY_SUPPORT_64
+- __TMS320C2000__=1
+- __TMS320C28X__=1
+- __TMS320C28XX__=1
+- __PTRDIFF_T_TYPE__=long
+- __SIZE_T_TYPE__="unsigned long"
+- __WCHAR_T_TYPE__="unsigned int"
+- __uint8_t=short
+- __int8_t=short
+- __asm(x)
+- __cregister
+- EALLOW
+- EDIS
+- EINT
+- ERTM
+- DINT
+- __interrupt
+- __TI_EABI__
+- asm(x)
+- byte_peripheral
+- cregister=
+- far
+- interrupt=
+Source/src/Timer.c:
+- TEST
+- CEEDLING
+- UNITY_SUPPORT_64
+- __TMS320C2000__=1
+- __TMS320C28X__=1
+- __TMS320C28XX__=1
+- __PTRDIFF_T_TYPE__=long
+- __SIZE_T_TYPE__="unsigned long"
+- __WCHAR_T_TYPE__="unsigned int"
+- __uint8_t=short
+- __int8_t=short
+- __asm(x)
+- __cregister
+- EALLOW
+- EDIS
+- EINT
+- ERTM
+- DINT
+- __interrupt
+- __TI_EABI__
+- asm(x)
+- byte_peripheral
+- cregister=
+- far
+- interrupt=
+Source/src/Main.c:
+- TEST
+- CEEDLING
+- UNITY_SUPPORT_64
+- __TMS320C2000__=1
+- __TMS320C28X__=1
+- __TMS320C28XX__=1
+- __PTRDIFF_T_TYPE__=long
+- __SIZE_T_TYPE__="unsigned long"
+- __WCHAR_T_TYPE__="unsigned int"
+- __uint8_t=short
+- __int8_t=short
+- __asm(x)
+- __cregister
+- EALLOW
+- EDIS
+- EINT
+- ERTM
+- DINT
+- __interrupt
+- __TI_EABI__
+- asm(x)
+- byte_peripheral
+- cregister=
+- far
+- interrupt=

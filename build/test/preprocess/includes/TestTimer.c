@@ -1,10 +1,10 @@
 ---
 - C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/ceedling-0.31.1/vendor/unity/src/unity.h
 - test/support/UnityHelper.h
-- src/DSP280x_Device.h
-- src/DSP280x_Examples.h
-- MockTaster.h
-- src/Timer.h
-- src/DSP280x_PieCtrl.c
-- src/DSP280x_CpuTimers.c
-- src/DSP280x_GlobalVariableDefs.c
+- Source/src/DSP280x_Device.h
+- Source/src/DSP280x_Examples.h
+- build/test/mocks/MockTaster.h
+- Source/src/Timer.h
+- Source/src/DSP280x_PieCtrl.c
+- Source/src/DSP280x_CpuTimers.c
+- Source/src/DSP280x_GlobalVariableDefs.c
