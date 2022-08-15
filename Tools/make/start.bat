@@ -1,5 +1,6 @@
 @echo OFF
 cd Tools/make
 set "SOURCEPATH=../../Source/src"
-%MAKE_PATH%
+rem %MAKE_PATH%
+%MAKE_PATH% OBJS_C
 pause

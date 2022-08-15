@@ -18,7 +18,7 @@ ORDERED_OBJS += \
 all: OBJS_C OBJS_ASM
 	@$(MAKE) "Blinkersteuerung.out"
 	
-OBJS_C: ${SOURCEPATH}/*.c
+OBJS_C:
 	@$(echo) 'Compiling C- Files'
 	@$(echo) 'Invoking: C2000 Compiler'
 	"$(Compiler)/bin/cl2000" -v28 -ml -mt \
@@ -26,11 +26,11 @@ OBJS_C: ${SOURCEPATH}/*.c
 	--include_path="${SOURCEPATH}/DeviceHeader/" \
 	--obj_directory=$(ObjPath) \
 	-g --diag_warning=225 --diag_wrap=off --display_error_number --abi=coffabi \
-	$(GEN_OPTS__FLAG) "${SOURCEPATH}/*.c"
+	"${SOURCEPATH}/*.c"
 	@$(echo) 'Finished building C-Files'
 	@$(echo) ' '
 	
-OBJS_ASM: ${SOURCEPATH}/*.asm
+OBJS_ASM:
 	@$(echo) 'Compiling Asm- Files'
 	@$(echo) 'Invoking: C2000 Compiler'
 	"$(Compiler)/bin/cl2000" -v28 -ml -mt \
@@ -43,7 +43,7 @@ OBJS_ASM: ${SOURCEPATH}/*.asm
 	@$(echo) ' '
 
 
-Blinkersteuerung.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
+Blinkersteuerung.out:
 	@$(echo) 'Invoking: C2000 Linker'
 	"$(Compiler)/bin/cl2000" -v28 -ml -mt -g --diag_warning=225 --diag_wrap=off \
 	--display_error_number --abi=coffabi -z -m"$(TargetPath)/Blinkersteuerung.map" \
