@@ -42,11 +42,8 @@ pipeline {
 		
 		stage ('results'){
 			steps{
-					bat """
-						cd C:\\Blinkersteuerung
-					"""
-					xunit tools: [Custom(customXSL: 'unity.xsl', pattern: 'build\\artifacts\\gcov\\report.xml', skipNoTestFiles: false, stopProcessingIfError: true)]
-					cobertura coberturaReportFile: 'build\\artifacts\\gcov\\GcovCoverageCobertura.xml'
+					xunit tools: [Custom(customXSL: 'unity.xsl', pattern: 'report.xml', skipNoTestFiles: false, stopProcessingIfError: true)]
+					cobertura coberturaReportFile: 'GcovCoverageCobertura.xml'
 				
 			}
 		}
