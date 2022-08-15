@@ -1,4 +1,0 @@
----
-- Source/src/DSP280x_Device.h
-- Source/src/DSP280x_Examples.h
-- Source/src/Timer.h
