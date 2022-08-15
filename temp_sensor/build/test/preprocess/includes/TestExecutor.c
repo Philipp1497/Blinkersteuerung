@@ -1,9 +1,0 @@
----
-- C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/ceedling-0.31.1/vendor/unity/src/unity.h
-- src/Types.h
-- src/Executor.h
-- build/test/mocks/MockModel.h
-- build/test/mocks/MockUsartConductor.h
-- build/test/mocks/MockAdcConductor.h
-- build/test/mocks/MockTimerConductor.h
-- build/test/mocks/MockIntrinsicsWrapper.h

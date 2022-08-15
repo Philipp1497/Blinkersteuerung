@@ -13,7 +13,7 @@
   :use_exceptions: FALSE
   :use_test_preprocessor: FALSE
   :use_auxiliary_dependencies: TRUE
-  :build_root: C:/Windows/System32/config/systemprofile/AppData/Local/Jenkins/.jenkins/workspace/Blinkersteuerung/CI/build
+  :build_root: build
 #  :release_build: TRUE
   :test_file_prefix: Test
   :which_ceedling: gem
@@ -35,14 +35,14 @@
 
 :paths:
   :test:
-    - +:Source/test/**
-    - +:C:/Windows/System32/config/systemprofile/AppData/Local/Jenkins/.jenkins/workspace/Blinkersteuerung/CI/Source/test/**
-    - -:Source/test/support
+    - +:Source\\test\\**
+ #   - +:C:/Windows/System32/config/systemprofile/AppData/Local/Jenkins/.jenkins/workspace/Blinkersteuerung/CI/Source/test/**
+    - -:Source\\test\\support
   :source:
-    - Source/src
-    - C:/Windows/System32/config/systemprofile/AppData/Local/Jenkins/.jenkins/workspace/Blinkersteuerung/CI/Source/src/**
+    - Source\\src
+#    - C:/Windows/System32/config/systemprofile/AppData/Local/Jenkins/.jenkins/workspace/Blinkersteuerung/CI/Source/src/**
   :support:
-    - Source/test/support
+    - Source\\test\\support
 #    - src/CompilerIncludes
   :libraries: []
 
