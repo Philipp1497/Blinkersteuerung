@@ -36,7 +36,7 @@
 :paths:
   :test:
     - +:Source/test/**
-    - +:- C:/Windows/System32/config/systemprofile/AppData/Local/Jenkins/.jenkins/workspace/Blinkersteuerung/CI/Source/test/**
+#    - +:- C:/Windows/System32/config/systemprofile/AppData/Local/Jenkins/.jenkins/workspace/Blinkersteuerung/CI/Source/test/**
     - -:Source/test/support
   :source:
     - Source/src
