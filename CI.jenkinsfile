@@ -34,7 +34,8 @@ pipeline {
 		stage ('run ceedling tests') {
 			steps{
 				bat """
-					ceedling gcov:all utils:gcov
+					cd C:\\Blinkersteuerung
+					start.bat
 				"""
 			}
 		}
