@@ -34,8 +34,7 @@ pipeline {
 		stage ('run ceedling tests') {
 			steps{
 				bat """
-					cd temp_sensor
-					ceedling.cmd
+					ceedling gcov:all utils:gcov
 				"""
 			}
 		}
