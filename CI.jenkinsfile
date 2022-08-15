@@ -34,6 +34,7 @@ pipeline {
 		stage ('run ceedling tests') {
 			steps{
 				bat """
+					cd C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\Blinkersteuerung\CI
 					ceedling gcov:all utils:gcov
 				"""
 			}
