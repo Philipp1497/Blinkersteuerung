@@ -43,7 +43,7 @@
 - :rake_columns: '120'
 :defines:
   :test:
-  - &1 []
+  - []
   - TEST
   - CEEDLING
   - UNITY_SUPPORT_64
@@ -69,9 +69,7 @@
   - cregister=
   - far
   - interrupt=
-  :test_preprocess:
-  - *1
-  - TEST
+  :test_preprocess: []
   :release: []
   :release_preprocess: []
   :use_test_definition: false

@@ -12,7 +12,7 @@ char* GlobalOrderError;
 /*=======External Functions This Runner Calls=====*/
 extern void setUp(void);
 extern void tearDown(void);
-extern void testTimerIsr_when_zuendungIsNotActive();
+extern void testTimerIsr_when_ZuendungAndWarnblinkenAreNotActive();
 extern void testTimerIsr_when_warnblinkenIsActive();
 extern void testTimerIsr_when_rechtsblinken();
 extern void testTimerIsr_when_linksblinken();
@@ -88,15 +88,15 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
 int main(void)
 {
   UnityBegin("TestTimer.c");
-  run_test(testTimerIsr_when_zuendungIsNotActive, "testTimerIsr_when_zuendungIsNotActive", 36);
-  run_test(testTimerIsr_when_warnblinkenIsActive, "testTimerIsr_when_warnblinkenIsActive", 52);
-  run_test(testTimerIsr_when_rechtsblinken, "testTimerIsr_when_rechtsblinken", 66);
-  run_test(testTimerIsr_when_linksblinken, "testTimerIsr_when_linksblinken", 83);
-  run_test(testTimerIsr_blinkenLaengerAlsDreiSekunden, "testTimerIsr_blinkenLaengerAlsDreiSekunden", 100);
-  run_test(testTimerIsr_blinkenKuerzerAlsDreiSekunden, "testTimerIsr_blinkenKuerzerAlsDreiSekunden", 117);
-  run_test(testBlinken_when_countIsZero, "testBlinken_when_countIsZero", 134);
-  run_test(testBlinken_when_countIsGreaterTen, "testBlinken_when_countIsGreaterTen", 141);
-  run_test(testBlinken_when_countIsTwentyOne, "testBlinken_when_countIsTwentyOne", 148);
+  run_test(testTimerIsr_when_ZuendungAndWarnblinkenAreNotActive, "testTimerIsr_when_ZuendungAndWarnblinkenAreNotActive", 39);
+  run_test(testTimerIsr_when_warnblinkenIsActive, "testTimerIsr_when_warnblinkenIsActive", 55);
+  run_test(testTimerIsr_when_rechtsblinken, "testTimerIsr_when_rechtsblinken", 69);
+  run_test(testTimerIsr_when_linksblinken, "testTimerIsr_when_linksblinken", 86);
+  run_test(testTimerIsr_blinkenLaengerAlsDreiSekunden, "testTimerIsr_blinkenLaengerAlsDreiSekunden", 103);
+  run_test(testTimerIsr_blinkenKuerzerAlsDreiSekunden, "testTimerIsr_blinkenKuerzerAlsDreiSekunden", 120);
+  run_test(testBlinken_when_countIsZero, "testBlinken_when_countIsZero", 137);
+  run_test(testBlinken_when_countIsGreaterTen, "testBlinken_when_countIsGreaterTen", 144);
+  run_test(testBlinken_when_countIsTwentyOne, "testBlinken_when_countIsTwentyOne", 151);
 
   CMock_Guts_MemFreeFinal();
   return UnityEnd();

@@ -19,11 +19,7 @@
 
 int counter;
 
-int zuendung_aktiv;
 
-int flag;
-
-int richtungs_blinken_flag;
 
 int zuendung_aktiv;
 
@@ -59,7 +55,17 @@ void tearDown(void)
 
 
 
-void testTimerIsr_when_zuendungIsNotActive()
+
+
+int zuendung_aktiv;
+
+int flag;
+
+int richtungs_blinken_flag;
+
+
+
+void testTimerIsr_when_ZuendungAndWarnblinkenAreNotActive()
 
 {
 
@@ -69,13 +75,13 @@ void testTimerIsr_when_zuendungIsNotActive()
 
 
 
- zuendungstaster_CMockExpect(41);
+ zuendungstaster_CMockExpect(44);
 
-    warntaster_CMockExpect(42);
+    warntaster_CMockExpect(45);
 
-    rechtsblinken_CMockExpect(43);
+    rechtsblinken_CMockExpect(46);
 
-    linksblinken_CMockExpect(44);
+    linksblinken_CMockExpect(47);
 
  cpu_timer0_isr();
 
@@ -85,7 +91,7 @@ void testTimerIsr_when_zuendungIsNotActive()
 
 ((void *)0)
 
-), (UNITY_UINT)(47), UNITY_DISPLAY_STYLE_INT);
+), (UNITY_UINT)(50), UNITY_DISPLAY_STYLE_INT);
 
  printf("Requirement F1006 tested!");
 
@@ -103,13 +109,13 @@ void testTimerIsr_when_warnblinkenIsActive()
 
 
 
- zuendungstaster_CMockExpect(56);
+ zuendungstaster_CMockExpect(59);
 
-    warntaster_CMockExpect(57);
+    warntaster_CMockExpect(60);
 
-    rechtsblinken_CMockExpect(58);
+    rechtsblinken_CMockExpect(61);
 
-    linksblinken_CMockExpect(59);
+    linksblinken_CMockExpect(62);
 
  cpu_timer0_isr();
 
@@ -119,7 +125,7 @@ void testTimerIsr_when_warnblinkenIsActive()
 
 ((void *)0)
 
-), (UNITY_UINT)(62), UNITY_DISPLAY_STYLE_INT);
+), (UNITY_UINT)(65), UNITY_DISPLAY_STYLE_INT);
 
  printf("Requirement FXX tested!");
 
@@ -141,13 +147,13 @@ void testTimerIsr_when_rechtsblinken()
 
 
 
- zuendungstaster_CMockExpect(73);
+ zuendungstaster_CMockExpect(76);
 
-    warntaster_CMockExpect(74);
+    warntaster_CMockExpect(77);
 
-    rechtsblinken_CMockExpect(75);
+    rechtsblinken_CMockExpect(78);
 
-    linksblinken_CMockExpect(76);
+    linksblinken_CMockExpect(79);
 
  cpu_timer0_isr();
 
@@ -175,13 +181,13 @@ void testTimerIsr_when_linksblinken()
 
 
 
- zuendungstaster_CMockExpect(90);
+ zuendungstaster_CMockExpect(93);
 
-    warntaster_CMockExpect(91);
+    warntaster_CMockExpect(94);
 
-    rechtsblinken_CMockExpect(92);
+    rechtsblinken_CMockExpect(95);
 
-    linksblinken_CMockExpect(93);
+    linksblinken_CMockExpect(96);
 
  cpu_timer0_isr();
 
@@ -209,13 +215,13 @@ void testTimerIsr_blinkenLaengerAlsDreiSekunden()
 
 
 
- zuendungstaster_CMockExpect(107);
+ zuendungstaster_CMockExpect(110);
 
-    warntaster_CMockExpect(108);
+    warntaster_CMockExpect(111);
 
-    rechtsblinken_CMockExpect(109);
+    rechtsblinken_CMockExpect(112);
 
-    linksblinken_CMockExpect(110);
+    linksblinken_CMockExpect(113);
 
  cpu_timer0_isr();
 
@@ -243,13 +249,13 @@ void testTimerIsr_blinkenKuerzerAlsDreiSekunden()
 
 
 
- zuendungstaster_CMockExpect(124);
+ zuendungstaster_CMockExpect(127);
 
-    warntaster_CMockExpect(125);
+    warntaster_CMockExpect(128);
 
-    rechtsblinken_CMockExpect(126);
+    rechtsblinken_CMockExpect(129);
 
-    linksblinken_CMockExpect(127);
+    linksblinken_CMockExpect(130);
 
  cpu_timer0_isr();
 

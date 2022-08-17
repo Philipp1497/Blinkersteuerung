@@ -57,7 +57,7 @@
 			<Name>test/TestTaster.c::testLinksblinken</Name>
 		</Test>
 		<Test id="19">
-			<Name>test/TestTimer.c::testTimerIsr_when_zuendungIsNotActive</Name>
+			<Name>test/TestTimer.c::testTimerIsr_when_ZuendungAndWarnblinkenAreNotActive</Name>
 		</Test>
 		<Test id="20">
 			<Name>test/TestTimer.c::testTimerIsr_when_warnblinkenIsActive</Name>

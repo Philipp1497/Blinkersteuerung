@@ -3,40 +3,40 @@
   :path: test
   :file: TestTimer.c
 :successes:
-- :test: testTimerIsr_when_zuendungIsNotActive
-  :line: 36
+- :test: testTimerIsr_when_ZuendungAndWarnblinkenAreNotActive
+  :line: 39
   :message: ''
   :unity_test_time: 0
 - :test: testTimerIsr_when_warnblinkenIsActive
-  :line: 52
+  :line: 55
   :message: ''
   :unity_test_time: 0
 - :test: testTimerIsr_when_rechtsblinken
-  :line: 66
+  :line: 69
   :message: ''
   :unity_test_time: 0
 - :test: testTimerIsr_when_linksblinken
-  :line: 83
+  :line: 86
   :message: ''
   :unity_test_time: 0
 - :test: testTimerIsr_blinkenLaengerAlsDreiSekunden
-  :line: 100
+  :line: 103
   :message: ''
   :unity_test_time: 0
 - :test: testTimerIsr_blinkenKuerzerAlsDreiSekunden
-  :line: 117
+  :line: 120
   :message: ''
   :unity_test_time: 0
 - :test: testBlinken_when_countIsZero
-  :line: 134
+  :line: 137
   :message: ''
   :unity_test_time: 0
 - :test: testBlinken_when_countIsGreaterTen
-  :line: 141
+  :line: 144
   :message: ''
   :unity_test_time: 0
 - :test: testBlinken_when_countIsTwentyOne
-  :line: 148
+  :line: 151
   :message: ''
   :unity_test_time: 0
 :failures: []
@@ -53,4 +53,4 @@
 - Requirement FXX tested!
 - Requirement FXX tested!
 - Requirement FXX tested!
-:time: 0.01503670000238344
+:time: 0.07698850001906976

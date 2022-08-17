@@ -14,23 +14,6 @@ pipeline {
                  // bat "make\\start.bat"
             }
         }
-        stage ('archive Artifacts'){
-            steps{
-                archiveArtifacts artifacts: 'Target\\bin\\*.*', onlyIfSuccessful: true
-            }
-        }
-        stage ('run memory script'){
-            steps{
-                bat """
-                    xcopy "Target\\bin\\*.map" "Tools\\memory\\mapfiles" /y
-                    cd Tools\\memory
-                    del output\\output.txt
-                    %PYTHON% main.py
-                """
-                archiveArtifacts artifacts: 'Tools\\memory\\output\\output.txt', onlyIfSuccessful: true
-            }
-        }
-		
 		stage ('run ceedling tests') {
 			steps{
 				bat """
@@ -39,11 +22,18 @@ pipeline {
 				"""
 			}
 		}
-		
+        stage ('archive Artifacts'){
+            steps{
+                archiveArtifacts artifacts: 'Target\\bin\\*.*', onlyIfSuccessful: true
+            }
+        }
 		stage ('results'){
 			steps{
-					xunit tools: [Custom(customXSL: 'unity.xsl', pattern: 'report.xml', skipNoTestFiles: false, stopProcessingIfError: true)]
-					cobertura coberturaReportFile: 'GcovCoverageCobertura.xml'
+				xunit tools: [Custom(customXSL: 'unity.xsl',
+							  pattern: 'report.xml',
+							  skipNoTestFiles: false,
+							  stopProcessingIfError: true)]
+				cobertura coberturaReportFile: 'GcovCoverageCobertura.xml'
 				
 			}
 		}
