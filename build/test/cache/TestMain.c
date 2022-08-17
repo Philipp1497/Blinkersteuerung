@@ -2,7 +2,7 @@
 #include "Source/src/DSP280x_GlobalVariableDefs.c"
 #include "Source/src/DSP280x_CpuTimers.c"
 #include "Source/src/DSP280x_PieCtrl.c"
-#include "MockInit.h"
+#include "build/test/mocks/MockInit.h"
 #include "Source/src/Timer.h"
 #include "Source/src/Taster.h"
 #include "Source/src/DSP280x_Examples.h"
@@ -31,13 +31,29 @@ void tearDown(void)
 
 
 
-void testAppMain(void)
+void testAppMain_when_zuendungIsActive(void)
 
 {
 
-  init_CMockExpect(25);
+  zuendung_aktiv = 1;
+
+  init_CMockExpect(26);
 
 
+
+  AppMain();
+
+}
+
+
+
+void testAppMain_when_zuendungIsNotActive(void)
+
+{
+
+  zuendung_aktiv = 0;
+
+  init_CMockExpect(34);
 
 
 

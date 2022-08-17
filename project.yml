@@ -21,12 +21,6 @@
   :default_tasks:
     - test:all
 
-#:test_build:
-#  :use_assembly: TRUE
-
-#:release_build:
-#  :output: MyApp.out
-#  :use_assembly: FALSE
 
 :environment:
 
@@ -41,13 +35,9 @@
     - Source/src/**
   :support:
     - test/support
-#    - src/CompilerIncludes
   :libraries: []
 
 :defines:
-  # in order to add common defines:
-  #  1) remove the trailing [] from the :common: section
-  #  2) add entries to the :common: section (e.g. :test: has TEST defined)
   :common: &common_defines []
   :test:
     - *common_defines
@@ -73,14 +63,10 @@
     - __TI_EABI__
     - asm(x)
     - byte_peripheral
-#    - const=
     - cregister=
     - far
     - interrupt=
-#    - volatile
-  :test_preprocess:
-    - *common_defines
-    - TEST
+
 
 :cmock:
   :when_no_prototypes: :warn

@@ -20,10 +20,18 @@ void tearDown(void)
 {
 }
 
-void testAppMain(void)
+void testAppMain_when_zuendungIsActive(void)
 {
+  zuendung_aktiv = 1;
   init_Expect();
-  //Gpio_select();
+  
+  AppMain();
+}
+
+void testAppMain_when_zuendungIsNotActive(void)
+{
+  zuendung_aktiv = 0;
+  init_Expect();
   
   AppMain();
 }

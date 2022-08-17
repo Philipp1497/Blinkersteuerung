@@ -12,7 +12,8 @@ char* GlobalOrderError;
 /*=======External Functions This Runner Calls=====*/
 extern void setUp(void);
 extern void tearDown(void);
-extern void testAppMain(void);
+extern void testAppMain_when_zuendungIsActive(void);
+extern void testAppMain_when_zuendungIsNotActive(void);
 extern void testGpioSelect(void);
 
 
@@ -81,8 +82,9 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
 int main(void)
 {
   UnityBegin("TestMain.c");
-  run_test(testAppMain, "testAppMain", 23);
-  run_test(testGpioSelect, "testGpioSelect", 31);
+  run_test(testAppMain_when_zuendungIsActive, "testAppMain_when_zuendungIsActive", 23);
+  run_test(testAppMain_when_zuendungIsNotActive, "testAppMain_when_zuendungIsNotActive", 31);
+  run_test(testGpioSelect, "testGpioSelect", 39);
 
   CMock_Guts_MemFreeFinal();
   return UnityEnd();

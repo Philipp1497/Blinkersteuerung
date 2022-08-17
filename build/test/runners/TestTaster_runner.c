@@ -10,8 +10,18 @@ char* GlobalOrderError;
 /*=======External Functions This Runner Calls=====*/
 extern void setUp(void);
 extern void tearDown(void);
-extern void testZuendungstaster();
-extern void testWarntaster();
+extern void testZuendungstaster_whenZuendungWasNotActive();
+extern void testZuendungstaster_whenZuendungWasActive();
+extern void testZuendungstaster_State1TransitionTo2();
+extern void testZuendungstaster_State2TransitionTo3();
+extern void testZuendungstaster_State3TransitionTo4();
+extern void testZuendungstaster_State4TransitionTo1();
+extern void testWarntaster_whenWarnblinkenWasNotActive();
+extern void testWarntaster_whenWarnblinkenWasActive();
+extern void testWarntaster_State1TransitionTo2();
+extern void testWarntaster_State2TransitionTo3();
+extern void testWarntaster_State3TransitionTo4();
+extern void testWarntaster_State4TransitionTo1();
 extern void testRechtsblinken();
 extern void testLinksblinken();
 
@@ -78,10 +88,20 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
 int main(void)
 {
   UnityBegin("TestTaster.c");
-  run_test(testZuendungstaster, "testZuendungstaster", 22);
-  run_test(testWarntaster, "testWarntaster", 27);
-  run_test(testRechtsblinken, "testRechtsblinken", 32);
-  run_test(testLinksblinken, "testLinksblinken", 37);
+  run_test(testZuendungstaster_whenZuendungWasNotActive, "testZuendungstaster_whenZuendungWasNotActive", 30);
+  run_test(testZuendungstaster_whenZuendungWasActive, "testZuendungstaster_whenZuendungWasActive", 40);
+  run_test(testZuendungstaster_State1TransitionTo2, "testZuendungstaster_State1TransitionTo2", 50);
+  run_test(testZuendungstaster_State2TransitionTo3, "testZuendungstaster_State2TransitionTo3", 59);
+  run_test(testZuendungstaster_State3TransitionTo4, "testZuendungstaster_State3TransitionTo4", 68);
+  run_test(testZuendungstaster_State4TransitionTo1, "testZuendungstaster_State4TransitionTo1", 77);
+  run_test(testWarntaster_whenWarnblinkenWasNotActive, "testWarntaster_whenWarnblinkenWasNotActive", 87);
+  run_test(testWarntaster_whenWarnblinkenWasActive, "testWarntaster_whenWarnblinkenWasActive", 97);
+  run_test(testWarntaster_State1TransitionTo2, "testWarntaster_State1TransitionTo2", 107);
+  run_test(testWarntaster_State2TransitionTo3, "testWarntaster_State2TransitionTo3", 116);
+  run_test(testWarntaster_State3TransitionTo4, "testWarntaster_State3TransitionTo4", 125);
+  run_test(testWarntaster_State4TransitionTo1, "testWarntaster_State4TransitionTo1", 134);
+  run_test(testRechtsblinken, "testRechtsblinken", 147);
+  run_test(testLinksblinken, "testLinksblinken", 152);
 
   return UnityEnd();
 }

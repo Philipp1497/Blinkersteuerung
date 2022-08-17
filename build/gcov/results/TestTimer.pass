@@ -3,20 +3,54 @@
   :path: test
   :file: TestTimer.c
 :successes:
-- :test: testTimerIsr
-  :line: 34
+- :test: testTimerIsr_when_zuendungIsNotActive
+  :line: 36
   :message: ''
   :unity_test_time: 0
-- :test: testBlinken
-  :line: 47
+- :test: testTimerIsr_when_warnblinkenIsActive
+  :line: 52
+  :message: ''
+  :unity_test_time: 0
+- :test: testTimerIsr_when_rechtsblinken
+  :line: 66
+  :message: ''
+  :unity_test_time: 0
+- :test: testTimerIsr_when_linksblinken
+  :line: 83
+  :message: ''
+  :unity_test_time: 0
+- :test: testTimerIsr_blinkenLaengerAlsDreiSekunden
+  :line: 100
+  :message: ''
+  :unity_test_time: 0
+- :test: testTimerIsr_blinkenKuerzerAlsDreiSekunden
+  :line: 117
+  :message: ''
+  :unity_test_time: 0
+- :test: testBlinken_when_countIsZero
+  :line: 134
+  :message: ''
+  :unity_test_time: 0
+- :test: testBlinken_when_countIsGreaterTen
+  :line: 141
+  :message: ''
+  :unity_test_time: 0
+- :test: testBlinken_when_countIsTwentyOne
+  :line: 148
   :message: ''
   :unity_test_time: 0
 :failures: []
 :ignores: []
 :counts:
-  :total: 2
-  :passed: 2
+  :total: 9
+  :passed: 9
   :failed: 0
   :ignored: 0
-:stdout: []
-:time: 0.04928810000001249
+:stdout:
+- Requirement F1006 tested!
+- Requirement FXX tested!
+- Requirement FXX tested!
+- Requirement FXX tested!
+- Requirement FXX tested!
+- Requirement FXX tested!
+:time: 0.01503670000238344

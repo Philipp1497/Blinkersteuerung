@@ -3,28 +3,68 @@
   :path: test
   :file: TestTaster.c
 :successes:
-- :test: testZuendungstaster
-  :line: 22
+- :test: testZuendungstaster_whenZuendungWasNotActive
+  :line: 30
   :message: ''
   :unity_test_time: 0
-- :test: testWarntaster
-  :line: 27
+- :test: testZuendungstaster_whenZuendungWasActive
+  :line: 40
+  :message: ''
+  :unity_test_time: 0
+- :test: testZuendungstaster_State1TransitionTo2
+  :line: 50
+  :message: ''
+  :unity_test_time: 0
+- :test: testZuendungstaster_State2TransitionTo3
+  :line: 59
+  :message: ''
+  :unity_test_time: 0
+- :test: testZuendungstaster_State3TransitionTo4
+  :line: 68
+  :message: ''
+  :unity_test_time: 0
+- :test: testZuendungstaster_State4TransitionTo1
+  :line: 77
+  :message: ''
+  :unity_test_time: 0
+- :test: testWarntaster_whenWarnblinkenWasNotActive
+  :line: 87
+  :message: ''
+  :unity_test_time: 0
+- :test: testWarntaster_whenWarnblinkenWasActive
+  :line: 97
+  :message: ''
+  :unity_test_time: 0
+- :test: testWarntaster_State1TransitionTo2
+  :line: 107
+  :message: ''
+  :unity_test_time: 0
+- :test: testWarntaster_State2TransitionTo3
+  :line: 116
+  :message: ''
+  :unity_test_time: 0
+- :test: testWarntaster_State3TransitionTo4
+  :line: 125
+  :message: ''
+  :unity_test_time: 0
+- :test: testWarntaster_State4TransitionTo1
+  :line: 134
   :message: ''
   :unity_test_time: 0
 - :test: testRechtsblinken
-  :line: 32
+  :line: 147
   :message: ''
   :unity_test_time: 0
 - :test: testLinksblinken
-  :line: 37
+  :line: 152
   :message: ''
   :unity_test_time: 0
 :failures: []
 :ignores: []
 :counts:
-  :total: 4
-  :passed: 4
+  :total: 14
+  :passed: 14
   :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.05023890000029496
+:time: 0.042211599997244775

@@ -3,7 +3,7 @@
 - test/support/UnityHelper.h
 - Source/src/DSP280x_Device.h
 - Source/src/DSP280x_Examples.h
-- MockTaster.h
+- build/test/mocks/MockTaster.h
 - Source/src/Timer.h
 - Source/src/DSP280x_PieCtrl.c
 - Source/src/DSP280x_CpuTimers.c

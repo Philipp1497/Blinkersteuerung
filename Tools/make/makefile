@@ -15,7 +15,9 @@ ORDERED_OBJS += \
 "$(CMD)" \
 -llibc.a \
 
-all: OBJS_C OBJS_ASM
+all:
+	@$(MAKE) "OBJS_C"
+	@$(MAKE) "OBJS_ASM"
 	@$(MAKE) "Blinkersteuerung.out"
 	
 OBJS_C:
