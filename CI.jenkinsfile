@@ -34,7 +34,7 @@ pipeline {
 							  skipNoTestFiles: false,
 							  stopProcessingIfError: true)]
 				cobertura coberturaReportFile: 'GcovCoverageCobertura.xml'
-				publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: "report", reportFiles: 'ReqCoverage', reportName: 'ReqCoverage', reportTitles: 'Hallo'])
+				publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: "report", reportFiles: 'index', reportName: 'ReqCoverage', reportTitles: 'Hallo'])
 			}
 		}
     }
