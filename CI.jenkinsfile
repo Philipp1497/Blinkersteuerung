@@ -35,8 +35,6 @@ pipeline {
 							  stopProcessingIfError: true)]
 				cobertura coberturaReportFile: 'GcovCoverageCobertura.xml'
 				publishHTML (target : [allowMissing: false,
-							 alwaysLinkToLastBuild: true,
-							 keepAll: true,
 							 reportFiles: 'ReqCoverage.html',
 							 reportName: 'ReqCoverage',
 							 reportTitles: 'The Report'])
