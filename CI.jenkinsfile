@@ -33,6 +33,9 @@ pipeline {
 							  pattern: 'report.xml',
 							  skipNoTestFiles: false,
 							  stopProcessingIfError: true)]
+				xunit (
+					tools: [[$class: 'JUnitType', pattern: 'ReqCoverage.xml']]
+				)
 				cobertura coberturaReportFile: 'GcovCoverageCobertura.xml'
 			}
 		}
