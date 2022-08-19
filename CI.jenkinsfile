@@ -33,10 +33,9 @@ pipeline {
 							  pattern: 'report.xml',
 							  skipNoTestFiles: false,
 							  stopProcessingIfError: true)]
-			    xunit tools: [Custom(customXSL: 'unity.xsl',
-							  pattern: 'ReqCoverage.xml',
-							  skipNoTestFiles: false,
-							  stopProcessingIfError: true)]
+				xunit (
+					tools: [[$class: 'JUnitType', pattern: '*.xml']]
+				)
 				cobertura coberturaReportFile: 'GcovCoverageCobertura.xml'
 			}
 		}
