@@ -1,10 +1,32 @@
-<table>
-  <tr>
-    <th>Month</th>
-    <th>Savings</th>
-  </tr>
-  <tr>
-    <td>January</td>
-    <td>$100</td>
-  </tr>
-</table>
+<?xml version='1.0' encoding='utf-8' ?>
+<TestRun>
+	<FailedTests/>
+	<SuccessfulTests>
+		<Test id="1">
+			<Name>test/TestAdcConductor.c::testInitShouldCallHardwareInit</Name>
+		</Test>
+		<Test id="2">
+			<Name>test/TestAdcConductor.c::testRunShouldNotDoAnythingIfItIsNotTime</Name>
+		</Test>
+		<Test id="3">
+			<Name>test/TestAdcConductor.c::testRunShouldNotPassAdcResultToModelIfSampleIsNotComplete</Name>
+		</Test>
+		<Test id="4">
+			<Name>test/TestAdcConductor.c::testRunShouldGetLatestSampleFromAdcAndPassItToModelAndStartNewConversionWhenItIsTime</Name>
+		</Test>
+		<Test id="5">
+			<Name>test/TestAdcConductor.c::testJustHereToTest_Should_ProperlyPassAStructAndVerifyIt</Name>
+		</Test>
+		<Test id="6">
+			<Name>test/TestAdcConductor.c::test_AdcConductor_AlsoHereToTest_Should_ProperlyReturnAStructAsExpected1</Name>
+		</Test>
+		</SuccessfulTests>
+	<IgnoredTests/>
+	<Statistics>
+		<Tests>6</Tests>
+		<Ignores>0</Ignores>
+		<FailuresTotal>0</FailuresTotal>
+		<Errors>0</Errors>
+		<Failures>0</Failures>
+	</Statistics>
+</TestRun>

@@ -33,11 +33,11 @@ pipeline {
 							  pattern: 'report.xml',
 							  skipNoTestFiles: false,
 							  stopProcessingIfError: true)]
+			    xunit tools: [Custom(customXSL: 'unity.xsl',
+							  pattern: 'ReqCoverage.xml',
+							  skipNoTestFiles: false,
+							  stopProcessingIfError: true)]
 				cobertura coberturaReportFile: 'GcovCoverageCobertura.xml'
-				publishHTML (target : [allowMissing: false,
-							 reportFiles: 'ReqCoverage.html',
-							 reportName: 'ReqCoverage',
-							 reportTitles: 'The Report'])
 			}
 		}
     }
