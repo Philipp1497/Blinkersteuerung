@@ -39,7 +39,7 @@ def parse_log():
 
 def generate_report():
     file = open('output/output.txt', 'a')
-    file.write('Resource Tool by Philipp Pawlischinez' + '\n' +
+    file.write('Requirements' + '\n' +
                '##############################################################################' + '\n')
     file.write('Tested Requirements: ' + '\n')
     i = 0
