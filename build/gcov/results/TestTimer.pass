@@ -11,46 +11,54 @@
   :line: 55
   :message: ''
   :unity_test_time: 0
-- :test: testTimerIsr_when_rechtsblinken
+- :test: testTimerIsr_when_warnblinkenAndRichtungsblinkenIsActive
   :line: 69
   :message: ''
   :unity_test_time: 0
+- :test: testTimerIsr_when_rechtsblinken
+  :line: 84
+  :message: ''
+  :unity_test_time: 0
 - :test: testTimerIsr_when_linksblinken
-  :line: 86
+  :line: 101
   :message: ''
   :unity_test_time: 0
 - :test: testTimerIsr_blinkenLaengerAlsDreiSekunden
-  :line: 103
+  :line: 118
   :message: ''
   :unity_test_time: 0
 - :test: testTimerIsr_blinkenKuerzerAlsDreiSekunden
-  :line: 120
+  :line: 135
   :message: ''
   :unity_test_time: 0
 - :test: testBlinken_when_countIsZero
-  :line: 137
+  :line: 152
   :message: ''
   :unity_test_time: 0
 - :test: testBlinken_when_countIsGreaterTen
-  :line: 144
+  :line: 160
   :message: ''
   :unity_test_time: 0
 - :test: testBlinken_when_countIsTwentyOne
-  :line: 151
+  :line: 168
   :message: ''
   :unity_test_time: 0
 :failures: []
 :ignores: []
 :counts:
-  :total: 9
-  :passed: 9
+  :total: 10
+  :passed: 10
   :failed: 0
   :ignored: 0
 :stdout:
 - Requirement F1006 tested!
-- Requirement FXX tested!
-- Requirement FXX tested!
-- Requirement FXX tested!
-- Requirement FXX tested!
-- Requirement FXX tested!
-:time: 0.022113500000159547
+- Requirement F1002.3 tested!
+- Requirement F1008 tested!
+- Requirement F1004 tested!
+- Requirement F1007 tested!
+- Requirement F1005.2 tested!
+- Requirement F1005.1 tested!
+- Requirement F1003 tested!
+- Requirement F1003 tested!
+- Requirement F1003 tested!
+:time: 7.524852299997292

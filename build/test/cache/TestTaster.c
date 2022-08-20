@@ -205,6 +205,8 @@ void testWarntaster_whenWarnblinkenWasNotActive()
 
 ), (UNITY_UINT)(94), UNITY_DISPLAY_STYLE_INT);
 
+ printf("Requirement F1002.1 tested!");
+
 }
 
 
@@ -227,7 +229,9 @@ void testWarntaster_whenWarnblinkenWasActive()
 
 ((void *)0)
 
-), (UNITY_UINT)(104), UNITY_DISPLAY_STYLE_INT);
+), (UNITY_UINT)(105), UNITY_DISPLAY_STYLE_INT);
+
+ printf("Requirement F1002.2 tested!");
 
 }
 
@@ -249,7 +253,11 @@ void testWarntaster_State1TransitionTo2()
 
 ((void *)0)
 
-), (UNITY_UINT)(113), UNITY_DISPLAY_STYLE_INT);
+), (UNITY_UINT)(115), UNITY_DISPLAY_STYLE_INT);
+
+ printf("Requirement F1001.3 tested!");
+
+ printf("Requirement F1001.4 tested!");
 
 }
 
@@ -271,7 +279,7 @@ void testWarntaster_State2TransitionTo3()
 
 ((void *)0)
 
-), (UNITY_UINT)(122), UNITY_DISPLAY_STYLE_INT);
+), (UNITY_UINT)(126), UNITY_DISPLAY_STYLE_INT);
 
 }
 
@@ -293,7 +301,7 @@ void testWarntaster_State3TransitionTo4()
 
 ((void *)0)
 
-), (UNITY_UINT)(131), UNITY_DISPLAY_STYLE_INT);
+), (UNITY_UINT)(135), UNITY_DISPLAY_STYLE_INT);
 
 }
 
@@ -315,7 +323,7 @@ void testWarntaster_State4TransitionTo1()
 
 ((void *)0)
 
-), (UNITY_UINT)(140), UNITY_DISPLAY_STYLE_INT);
+), (UNITY_UINT)(144), UNITY_DISPLAY_STYLE_INT);
 
 }
 
@@ -329,9 +337,15 @@ void testWarntaster_State4TransitionTo1()
 
 
 
-void testRechtsblinken()
+void testRechtsblinken_RichtungsBlinkenAus()
 
 {
+
+ rechts_blink_zustand = 1;
+
+ GpioDataRegs.GPADAT.bit.GPIO22 = 0;
+
+ richtungs_blinken_flag = 0;
 
  rechtsblinken();
 
@@ -339,10 +353,272 @@ void testRechtsblinken()
 
 
 
-void testLinksblinken()
+void testRechtsblinken_RechtsblinkenAktiviert()
 
 {
 
+ rechts_blink_zustand = 1;
+
+ GpioDataRegs.GPADAT.bit.GPIO22 = 0;
+
+ richtungs_blinken_flag = 1;
+
+ rechtsblinken();
+
+}
+
+
+
+void testRechtsblinken_LinksblinkenAktiviert()
+
+{
+
+ rechts_blink_zustand = 1;
+
+ GpioDataRegs.GPADAT.bit.GPIO22 = 0;
+
+ richtungs_blinken_flag = 2;
+
+ rechtsblinken();
+
+}
+
+
+
+void testRechtsblinken_State1TransitionTo2()
+
+{
+
+ rechts_blink_zustand = 1;
+
+ GpioDataRegs.GPADAT.bit.GPIO22 = 0;
+
+ rechtsblinken();
+
+
+
+ UnityAssertEqualNumber((UNITY_INT)((2)), (UNITY_INT)((rechts_blink_zustand)), (
+
+((void *)0)
+
+), (UNITY_UINT)(181), UNITY_DISPLAY_STYLE_INT);
+
+
+
+ printf("Requirement F1001.2 tested!");
+
+ printf("Requirement F1001.4 tested!");
+
+}
+
+
+
+void testRechtsblinken_State2TransitionTo3()
+
+{
+
+ rechts_blink_zustand = 2;
+
+ GpioDataRegs.GPADAT.bit.GPIO22 = 0;
+
+ rechtsblinken();
+
+
+
+ UnityAssertEqualNumber((UNITY_INT)((3)), (UNITY_INT)((rechts_blink_zustand)), (
+
+((void *)0)
+
+), (UNITY_UINT)(193), UNITY_DISPLAY_STYLE_INT);
+
+}
+
+
+
+void testRechtsblinken_State3TransitionTo4()
+
+{
+
+ rechts_blink_zustand = 3;
+
+ GpioDataRegs.GPADAT.bit.GPIO22 = 1;
+
+ rechtsblinken();
+
+
+
+ UnityAssertEqualNumber((UNITY_INT)((4)), (UNITY_INT)((rechts_blink_zustand)), (
+
+((void *)0)
+
+), (UNITY_UINT)(202), UNITY_DISPLAY_STYLE_INT);
+
+}
+
+
+
+void testRechtsblinken_State4TransitionTo1()
+
+{
+
+ rechts_blink_zustand = 4;
+
+ GpioDataRegs.GPADAT.bit.GPIO22 = 1;
+
+ rechtsblinken();
+
+
+
+ UnityAssertEqualNumber((UNITY_INT)((1)), (UNITY_INT)((rechts_blink_zustand)), (
+
+((void *)0)
+
+), (UNITY_UINT)(211), UNITY_DISPLAY_STYLE_INT);
+
+}
+
+
+
+
+
+
+
+void testLinksblinken_RichtungsBlinkenAus()
+
+{
+
+ links_blink_zustand = 1;
+
+ GpioDataRegs.GPADAT.bit.GPIO17 = 0;
+
+ richtungs_blinken_flag = 0;
+
  linksblinken();
+
+}
+
+
+
+void testLinksblinken_RechtsblinkenAktiviert()
+
+{
+
+ links_blink_zustand = 1;
+
+ GpioDataRegs.GPADAT.bit.GPIO17 = 0;
+
+ richtungs_blinken_flag = 1;
+
+ linksblinken();
+
+}
+
+
+
+void testLinksblinken_LinksblinkenAktiviert()
+
+{
+
+ links_blink_zustand = 1;
+
+ GpioDataRegs.GPADAT.bit.GPIO17 = 0;
+
+ richtungs_blinken_flag = 2;
+
+ linksblinken();
+
+}
+
+
+
+void testLinksblinken_State1TransitionTo2()
+
+{
+
+ links_blink_zustand = 1;
+
+ GpioDataRegs.GPADAT.bit.GPIO17 = 0;
+
+ linksblinken();
+
+
+
+ UnityAssertEqualNumber((UNITY_INT)((2)), (UNITY_INT)((links_blink_zustand)), (
+
+((void *)0)
+
+), (UNITY_UINT)(246), UNITY_DISPLAY_STYLE_INT);
+
+
+
+ printf("Requirement F1001.1 tested!");
+
+ printf("Requirement F1001.4 tested!");
+
+}
+
+
+
+void testLinksblinken_State2TransitionTo3()
+
+{
+
+ links_blink_zustand = 2;
+
+ GpioDataRegs.GPADAT.bit.GPIO17 = 0;
+
+ linksblinken();
+
+
+
+ UnityAssertEqualNumber((UNITY_INT)((3)), (UNITY_INT)((links_blink_zustand)), (
+
+((void *)0)
+
+), (UNITY_UINT)(258), UNITY_DISPLAY_STYLE_INT);
+
+}
+
+
+
+void testLinksblinken_State3TransitionTo4()
+
+{
+
+ links_blink_zustand = 3;
+
+ GpioDataRegs.GPADAT.bit.GPIO17 = 1;
+
+ linksblinken();
+
+
+
+ UnityAssertEqualNumber((UNITY_INT)((4)), (UNITY_INT)((links_blink_zustand)), (
+
+((void *)0)
+
+), (UNITY_UINT)(267), UNITY_DISPLAY_STYLE_INT);
+
+}
+
+
+
+void testLinksblinken_State4TransitionTo1()
+
+{
+
+ links_blink_zustand = 4;
+
+ GpioDataRegs.GPADAT.bit.GPIO17 = 1;
+
+ linksblinken();
+
+
+
+ UnityAssertEqualNumber((UNITY_INT)((1)), (UNITY_INT)((links_blink_zustand)), (
+
+((void *)0)
+
+), (UNITY_UINT)(276), UNITY_DISPLAY_STYLE_INT);
 
 }

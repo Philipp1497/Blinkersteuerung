@@ -18,8 +18,18 @@ pipeline {
 			steps{
 				bat """
 					cd C:\\Blinkersteuerung
-					test.bat
+					test.bat > Tools\\ReqCoverage\\log.txt
 				"""
+			}
+		}
+		stage ('calculate Requirements Coverage') {
+			steps{
+				bat """
+                    cd Tools\\ReqCoverage
+                    del output\\output.txt
+                    %PYTHON% main.py
+                """
+                archiveArtifacts artifacts: 'Tools\\ReqCoverage\\output\\output.txt', onlyIfSuccessful: true
 			}
 		}
         stage ('archive Artifacts'){

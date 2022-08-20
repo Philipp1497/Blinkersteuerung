@@ -63,7 +63,22 @@ void testTimerIsr_when_warnblinkenIsActive()
 	cpu_timer0_isr();
 	
 	TEST_ASSERT_EQUAL(0, richtungs_blinken_flag);
-	printf("Requirement FXX tested!");
+	printf("Requirement F1002.3 tested!");
+}
+
+void testTimerIsr_when_warnblinkenAndRichtungsblinkenIsActive()
+{
+	flag = 1;
+	richtungs_blinken_flag = 1;
+	
+	zuendungstaster_Expect();
+    warntaster_Expect();
+    rechtsblinken_Expect();
+    linksblinken_Expect();
+	cpu_timer0_isr();
+	
+	TEST_ASSERT_EQUAL(0, richtungs_blinken_flag);
+	printf("Requirement F1008 tested!");
 }
 
 void testTimerIsr_when_rechtsblinken()
@@ -80,7 +95,7 @@ void testTimerIsr_when_rechtsblinken()
 	cpu_timer0_isr();
 	
 	//TEST_ASSERT_EQUAL(0, richtungs_blinken_flag);
-	printf("Requirement FXX tested!");
+	printf("Requirement F1004 tested!");
 }
 
 void testTimerIsr_when_linksblinken()
@@ -97,7 +112,7 @@ void testTimerIsr_when_linksblinken()
 	cpu_timer0_isr();
 	
 	//TEST_ASSERT_EQUAL(0, richtungs_blinken_flag);
-	printf("Requirement FXX tested!");
+	printf("Requirement F1007 tested!");
 }
 
 void testTimerIsr_blinkenLaengerAlsDreiSekunden()
@@ -114,7 +129,7 @@ void testTimerIsr_blinkenLaengerAlsDreiSekunden()
 	cpu_timer0_isr();
 	
 	//TEST_ASSERT_EQUAL(0, richtungs_blinken_flag);
-	printf("Requirement FXX tested!");
+	printf("Requirement F1005.2 tested!");
 }
 
 void testTimerIsr_blinkenKuerzerAlsDreiSekunden()
@@ -131,7 +146,7 @@ void testTimerIsr_blinkenKuerzerAlsDreiSekunden()
 	cpu_timer0_isr();
 	
 	//TEST_ASSERT_EQUAL(0, richtungs_blinken_flag);
-	printf("Requirement FXX tested!");
+	printf("Requirement F1005.1 tested!");
 }
 
 void testBlinken_when_countIsZero()
@@ -139,6 +154,7 @@ void testBlinken_when_countIsZero()
 	//turn on Leds test Case
 	counter = 0;
 	blinken(LED_BEIDE);
+	printf("Requirement F1003 tested!");
 }
 
 void testBlinken_when_countIsGreaterTen()
@@ -146,6 +162,7 @@ void testBlinken_when_countIsGreaterTen()
 	//turn off Leds test Case
 	counter = 11;
 	blinken(LED_BEIDE);
+	printf("Requirement F1003 tested!");
 }
 
 void testBlinken_when_countIsTwentyOne()
@@ -153,4 +170,5 @@ void testBlinken_when_countIsTwentyOne()
 	//reset Counter test Case
 	counter = 21;
 	blinken(LED_BEIDE);
+	printf("Requirement F1003 tested!");
 }

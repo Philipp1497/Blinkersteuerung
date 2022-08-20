@@ -22,8 +22,20 @@ extern void testWarntaster_State1TransitionTo2();
 extern void testWarntaster_State2TransitionTo3();
 extern void testWarntaster_State3TransitionTo4();
 extern void testWarntaster_State4TransitionTo1();
-extern void testRechtsblinken();
-extern void testLinksblinken();
+extern void testRechtsblinken_RichtungsBlinkenAus();
+extern void testRechtsblinken_RechtsblinkenAktiviert();
+extern void testRechtsblinken_LinksblinkenAktiviert();
+extern void testRechtsblinken_State1TransitionTo2();
+extern void testRechtsblinken_State2TransitionTo3();
+extern void testRechtsblinken_State3TransitionTo4();
+extern void testRechtsblinken_State4TransitionTo1();
+extern void testLinksblinken_RichtungsBlinkenAus();
+extern void testLinksblinken_RechtsblinkenAktiviert();
+extern void testLinksblinken_LinksblinkenAktiviert();
+extern void testLinksblinken_State1TransitionTo2();
+extern void testLinksblinken_State2TransitionTo3();
+extern void testLinksblinken_State3TransitionTo4();
+extern void testLinksblinken_State4TransitionTo1();
 
 
 /*=======Mock Management=====*/
@@ -95,13 +107,25 @@ int main(void)
   run_test(testZuendungstaster_State3TransitionTo4, "testZuendungstaster_State3TransitionTo4", 68);
   run_test(testZuendungstaster_State4TransitionTo1, "testZuendungstaster_State4TransitionTo1", 77);
   run_test(testWarntaster_whenWarnblinkenWasNotActive, "testWarntaster_whenWarnblinkenWasNotActive", 87);
-  run_test(testWarntaster_whenWarnblinkenWasActive, "testWarntaster_whenWarnblinkenWasActive", 97);
-  run_test(testWarntaster_State1TransitionTo2, "testWarntaster_State1TransitionTo2", 107);
-  run_test(testWarntaster_State2TransitionTo3, "testWarntaster_State2TransitionTo3", 116);
-  run_test(testWarntaster_State3TransitionTo4, "testWarntaster_State3TransitionTo4", 125);
-  run_test(testWarntaster_State4TransitionTo1, "testWarntaster_State4TransitionTo1", 134);
-  run_test(testRechtsblinken, "testRechtsblinken", 147);
-  run_test(testLinksblinken, "testLinksblinken", 152);
+  run_test(testWarntaster_whenWarnblinkenWasActive, "testWarntaster_whenWarnblinkenWasActive", 98);
+  run_test(testWarntaster_State1TransitionTo2, "testWarntaster_State1TransitionTo2", 109);
+  run_test(testWarntaster_State2TransitionTo3, "testWarntaster_State2TransitionTo3", 120);
+  run_test(testWarntaster_State3TransitionTo4, "testWarntaster_State3TransitionTo4", 129);
+  run_test(testWarntaster_State4TransitionTo1, "testWarntaster_State4TransitionTo1", 138);
+  run_test(testRechtsblinken_RichtungsBlinkenAus, "testRechtsblinken_RichtungsBlinkenAus", 151);
+  run_test(testRechtsblinken_RechtsblinkenAktiviert, "testRechtsblinken_RechtsblinkenAktiviert", 159);
+  run_test(testRechtsblinken_LinksblinkenAktiviert, "testRechtsblinken_LinksblinkenAktiviert", 167);
+  run_test(testRechtsblinken_State1TransitionTo2, "testRechtsblinken_State1TransitionTo2", 175);
+  run_test(testRechtsblinken_State2TransitionTo3, "testRechtsblinken_State2TransitionTo3", 187);
+  run_test(testRechtsblinken_State3TransitionTo4, "testRechtsblinken_State3TransitionTo4", 196);
+  run_test(testRechtsblinken_State4TransitionTo1, "testRechtsblinken_State4TransitionTo1", 205);
+  run_test(testLinksblinken_RichtungsBlinkenAus, "testLinksblinken_RichtungsBlinkenAus", 216);
+  run_test(testLinksblinken_RechtsblinkenAktiviert, "testLinksblinken_RechtsblinkenAktiviert", 224);
+  run_test(testLinksblinken_LinksblinkenAktiviert, "testLinksblinken_LinksblinkenAktiviert", 232);
+  run_test(testLinksblinken_State1TransitionTo2, "testLinksblinken_State1TransitionTo2", 240);
+  run_test(testLinksblinken_State2TransitionTo3, "testLinksblinken_State2TransitionTo3", 252);
+  run_test(testLinksblinken_State3TransitionTo4, "testLinksblinken_State3TransitionTo4", 261);
+  run_test(testLinksblinken_State4TransitionTo1, "testLinksblinken_State4TransitionTo1", 270);
 
   return UnityEnd();
 }

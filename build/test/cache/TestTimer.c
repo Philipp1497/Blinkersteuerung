@@ -127,7 +127,41 @@ void testTimerIsr_when_warnblinkenIsActive()
 
 ), (UNITY_UINT)(65), UNITY_DISPLAY_STYLE_INT);
 
- printf("Requirement FXX tested!");
+ printf("Requirement F1002.3 tested!");
+
+}
+
+
+
+void testTimerIsr_when_warnblinkenAndRichtungsblinkenIsActive()
+
+{
+
+ flag = 1;
+
+ richtungs_blinken_flag = 1;
+
+
+
+ zuendungstaster_CMockExpect(74);
+
+    warntaster_CMockExpect(75);
+
+    rechtsblinken_CMockExpect(76);
+
+    linksblinken_CMockExpect(77);
+
+ cpu_timer0_isr();
+
+
+
+ UnityAssertEqualNumber((UNITY_INT)((0)), (UNITY_INT)((richtungs_blinken_flag)), (
+
+((void *)0)
+
+), (UNITY_UINT)(80), UNITY_DISPLAY_STYLE_INT);
+
+ printf("Requirement F1008 tested!");
 
 }
 
@@ -147,13 +181,13 @@ void testTimerIsr_when_rechtsblinken()
 
 
 
- zuendungstaster_CMockExpect(76);
+ zuendungstaster_CMockExpect(91);
 
-    warntaster_CMockExpect(77);
+    warntaster_CMockExpect(92);
 
-    rechtsblinken_CMockExpect(78);
+    rechtsblinken_CMockExpect(93);
 
-    linksblinken_CMockExpect(79);
+    linksblinken_CMockExpect(94);
 
  cpu_timer0_isr();
 
@@ -161,7 +195,7 @@ void testTimerIsr_when_rechtsblinken()
 
 
 
- printf("Requirement FXX tested!");
+ printf("Requirement F1004 tested!");
 
 }
 
@@ -181,13 +215,13 @@ void testTimerIsr_when_linksblinken()
 
 
 
- zuendungstaster_CMockExpect(93);
+ zuendungstaster_CMockExpect(108);
 
-    warntaster_CMockExpect(94);
+    warntaster_CMockExpect(109);
 
-    rechtsblinken_CMockExpect(95);
+    rechtsblinken_CMockExpect(110);
 
-    linksblinken_CMockExpect(96);
+    linksblinken_CMockExpect(111);
 
  cpu_timer0_isr();
 
@@ -195,7 +229,7 @@ void testTimerIsr_when_linksblinken()
 
 
 
- printf("Requirement FXX tested!");
+ printf("Requirement F1007 tested!");
 
 }
 
@@ -215,13 +249,13 @@ void testTimerIsr_blinkenLaengerAlsDreiSekunden()
 
 
 
- zuendungstaster_CMockExpect(110);
+ zuendungstaster_CMockExpect(125);
 
-    warntaster_CMockExpect(111);
+    warntaster_CMockExpect(126);
 
-    rechtsblinken_CMockExpect(112);
+    rechtsblinken_CMockExpect(127);
 
-    linksblinken_CMockExpect(113);
+    linksblinken_CMockExpect(128);
 
  cpu_timer0_isr();
 
@@ -229,7 +263,7 @@ void testTimerIsr_blinkenLaengerAlsDreiSekunden()
 
 
 
- printf("Requirement FXX tested!");
+ printf("Requirement F1005.2 tested!");
 
 }
 
@@ -249,13 +283,13 @@ void testTimerIsr_blinkenKuerzerAlsDreiSekunden()
 
 
 
- zuendungstaster_CMockExpect(127);
+ zuendungstaster_CMockExpect(142);
 
-    warntaster_CMockExpect(128);
+    warntaster_CMockExpect(143);
 
-    rechtsblinken_CMockExpect(129);
+    rechtsblinken_CMockExpect(144);
 
-    linksblinken_CMockExpect(130);
+    linksblinken_CMockExpect(145);
 
  cpu_timer0_isr();
 
@@ -263,7 +297,7 @@ void testTimerIsr_blinkenKuerzerAlsDreiSekunden()
 
 
 
- printf("Requirement FXX tested!");
+ printf("Requirement F1005.1 tested!");
 
 }
 
@@ -279,6 +313,8 @@ void testBlinken_when_countIsZero()
 
  blinken(0x00180000);
 
+ printf("Requirement F1003 tested!");
+
 }
 
 
@@ -293,6 +329,8 @@ void testBlinken_when_countIsGreaterTen()
 
  blinken(0x00180000);
 
+ printf("Requirement F1003 tested!");
+
 }
 
 
@@ -306,5 +344,7 @@ void testBlinken_when_countIsTwentyOne()
  counter = 21;
 
  blinken(0x00180000);
+
+ printf("Requirement F1003 tested!");
 
 }
