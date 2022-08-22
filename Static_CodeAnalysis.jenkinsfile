@@ -11,7 +11,6 @@ pipeline {
         stage ('Build') {
             steps{
                 bat "Tools\\make\\start.bat"
-                 // bat "make\\start.bat"
             }
         }
         stage ('archive Artifacts'){
@@ -22,7 +21,7 @@ pipeline {
         stage ('run static code analysis'){
             steps{
                 bat """
-                    xcopy "Source\\*.*" "Tools\\splint" /y
+                    xcopy "Source\\src\\*.*" "Tools\\splint" /y
                     cd Tools\\splint
                     start.bat
                 """
