@@ -1,5 +1,5 @@
 pushd %CD%
 echo %CD%
-ceedling gcov:all utils:gcov > Tools\\ReqCoverage\\log.txt
+ceedling gcov:all utils:gcov -I%CD% > Tools\\ReqCoverage\\log.txt
 popd
 rem pause
