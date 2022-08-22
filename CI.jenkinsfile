@@ -17,7 +17,7 @@ pipeline {
 		stage ('run ceedling tests') {
 			steps{
 				bat """
-					ceedling --trace
+					ceedling gcov:all utils:gcov > Tools\\ReqCoverage\\log.txt
 				"""
 			}
 		}
@@ -39,10 +39,10 @@ pipeline {
 		stage ('results'){
 			steps{
 				xunit tools: [Custom(customXSL: 'unity.xsl',
-							  pattern: 'report.xml',
+							  pattern: 'build\\artifacts\\gcov\\report.xml',
 							  skipNoTestFiles: false,
 							  stopProcessingIfError: true)]
-				cobertura coberturaReportFile: 'GcovCoverageCobertura.xml'
+				cobertura coberturaReportFile: 'build\\artifacts\\gcov\\GcovCoverageCobertura.xml'
 			}
 		}
     }
