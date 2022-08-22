@@ -18,7 +18,7 @@ Running TestTaster.out...
 Test 'TestTimer.c'
 ------------------
 Running TestTimer.out...
-Creating gcov results report(s) in 'build/artifacts/gcov'... Done in 1.459 seconds.
+Creating gcov results report(s) in 'build/artifacts/gcov'... Done in 1.302 seconds.
 
 -----------------
 GCOV: TEST OUTPUT

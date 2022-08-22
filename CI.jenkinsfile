@@ -17,8 +17,7 @@ pipeline {
 		stage ('run ceedling tests') {
 			steps{
 				bat """
-					cd C:\\Blinkersteuerung
-					test.bat > Tools\\ReqCoverage\\log.txt
+					test.bat
 				"""
 			}
 		}

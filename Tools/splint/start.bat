@@ -1,3 +1,10 @@
-splint.exe C:\Blinkersteuerung\Source\Blinking_LED_main.c -imptype -nestedextern -i "../ti-cgt-msp430_18.12.4.LTS/include" > log.txt 2>&1
+
+
+set defines=-DSPLINT -Dinterrupt=""
+
+splint.exe C:\Blinkersteuerung\Source\src\Main.c %defines% >> log.txt 2>&1
+splint.exe C:\Blinkersteuerung\Source\src\Taster.c %defines% >> log.txt 2>&1
+splint.exe C:\Blinkersteuerung\Source\src\Timer.c %defines% >> log.txt 2>&1
+splint.exe C:\Blinkersteuerung\Source\src\Init.c %defines% >> log.txt 2>&1
 exit 0
 pause

@@ -1,6 +1,76 @@
 Splint 3.1.1 --- 12 April 2003
 
-C:\Blinkersteuerung\Source\DeviceHeader\DSP280x_PieVect.h(28,23): Parse Error:
-    Suspect missing struct or union keyword: interrupt :
-    int. (For help on parse errors, see splint -help parseerrors.)
-*** Cannot continue.
+C:\Blinkersteuerung\Source\src\Main.c: (in function AppMain)
+C:\Blinkersteuerung\Source\src\Main.c(34,10):
+    Test expression for while not boolean, type int: 1
+  Test expression type is not boolean or int. (Use -predboolint to inhibit
+  warning)
+C:\Blinkersteuerung\Source\src\Main.c(45,11): Unreachable code: return 0
+  This code will never be reached on any possible execution. (Use -unreachable
+  to inhibit warning)
+C:\Blinkersteuerung\Source\src\Main.c: (in function Gpio_select)
+C:\Blinkersteuerung\Source\src\Main.c(72,5): Unrecognized identifier: asm
+  Identifier used in code has not been declared. (Use -unrecog to inhibit
+  warning)
+C:\Blinkersteuerung\Source\src\Main.c(76,5): Statement has no effect:
+                                                GpioDataRegs.GPA...
+  Statement has no visible effect --- no values are modified. (Use -noeffect to
+  inhibit warning)
+C:\Blinkersteuerung\Source\src\Main.c(77,5): Statement has no effect:
+                                                GpioDataRegs.GPA...
+C:\Blinkersteuerung\Source\src\Main.c(78,5): Statement has no effect:
+                                                GpioDataRegs.GPA...
+C:\Blinkersteuerung\Source\src\Main.c(29,5):
+    Function exported but not used outside Main: AppMain
+  A declaration is exported, but not used outside this module. Declaration can
+  use static qualifier. (Use -exportlocal to inhibit warning)
+   C:\Blinkersteuerung\Source\src\Main.c(46,1): Definition of AppMain
+
+Finished checking --- 7 code warnings
+Splint 3.1.1 --- 12 April 2003
+
+C:\Blinkersteuerung\Source\src\Taster.c(7,5):
+    Variable exported but not used outside Taster: flag
+  A declaration is exported, but not used outside this module. Declaration can
+  use static qualifier. (Use -exportlocal to inhibit warning)
+C:\Blinkersteuerung\Source\src\Taster.c(9,5):
+    Variable exported but not used outside Taster: richtungs_blinken_flag
+C:\Blinkersteuerung\Source\src\Taster.c(10,5):
+    Variable exported but not used outside Taster: zuendung_aktiv
+C:\Blinkersteuerung\Source\src\Taster.c(12,5):
+    Variable exported but not used outside Taster: zuendung
+C:\Blinkersteuerung\Source\src\Taster.c(13,5):
+    Variable exported but not used outside Taster: warn_zustand
+C:\Blinkersteuerung\Source\src\Taster.c(14,5):
+    Variable exported but not used outside Taster: rechts_blink_zustand
+C:\Blinkersteuerung\Source\src\Taster.c(15,5):
+    Variable exported but not used outside Taster: links_blink_zustand
+
+Finished checking --- 7 code warnings
+Splint 3.1.1 --- 12 April 2003
+
+C:\Blinkersteuerung\Source\src\Timer.c: (in function blinken)
+C:\Blinkersteuerung\Source\src\Timer.c(80,9): Assignment of long int to Uint32:
+    GpioDataRegs.GPADAT.all = blinkmode
+  Types are incompatible. (Use -type to inhibit warning)
+C:\Blinkersteuerung\Source\src\Timer.h(6,6):
+    Function exported but not used outside Timer: blinken
+  A declaration is exported, but not used outside this module. Declaration can
+  use static qualifier. (Use -exportlocal to inhibit warning)
+   C:\Blinkersteuerung\Source\src\Timer.c(91,1): Definition of blinken
+C:\Blinkersteuerung\Source\src\Timer.c(8,5):
+    Variable exported but not used outside Timer: counter
+C:\Blinkersteuerung\Source\src\Timer.c(9,5):
+    Variable exported but not used outside Timer: blinkcounter
+
+Finished checking --- 4 code warnings
+Splint 3.1.1 --- 12 April 2003
+
+C:\Blinkersteuerung\Source\src\Init.c: (in function init)
+C:\Blinkersteuerung\Source\src\Init.c(25,8): Unrecognized identifier: asm
+  Identifier used in code has not been declared. (Use -unrecog to inhibit
+  warning)
+C:\Blinkersteuerung\Source\src\Init.c(33,8): Unrecognized identifier: IER
+C:\Blinkersteuerung\Source\src\Init.c(34,8): Unrecognized identifier: IFR
+
+Finished checking --- 3 code warnings

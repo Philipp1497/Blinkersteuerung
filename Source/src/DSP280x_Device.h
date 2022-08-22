@@ -35,10 +35,10 @@ extern "C" {
 //---------------------------------------------------------------------------
 // Common CPU Definitions:
 //
-
+#ifndef SPLINT
 extern cregister volatile unsigned int IFR;
 extern cregister volatile unsigned int IER;
-
+#endif
 #define  EINT   asm(" clrc INTM")
 #define  DINT   asm(" setc INTM")
 #define  ERTM   asm(" clrc DBGM")
