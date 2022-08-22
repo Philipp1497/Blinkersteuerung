@@ -23,6 +23,7 @@ pipeline {
                 bat """
                     xcopy "Source\\src\\*.*" "Tools\\splint" /y
                     cd Tools\\splint
+					del log.txt 2>NUL
                     start.bat
                 """
             }
