@@ -20,7 +20,8 @@ pipeline {
 		stage ('archive artifacts in zip') {
 			steps{
 				bat """
-					tar.exe -a -c -f Blinkersteuerung.zip ..
+					xcopy "Tools\\memory\\output\\output.txt" "Target"
+					tar.exe -a -c -f Blinkersteuerung.zip Target
                 """
 				archiveArtifacts artifacts: 'Blinkersteuerung.zip', onlyIfSuccessful: true
 			}
