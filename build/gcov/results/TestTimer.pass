@@ -1,0 +1,64 @@
+---
+:source:
+  :path: test
+  :file: TestTimer.c
+:successes:
+- :test: testTimerIsr_when_ZuendungAndWarnblinkenAreNotActive
+  :line: 39
+  :message: ''
+  :unity_test_time: 0
+- :test: testTimerIsr_when_warnblinkenIsActive
+  :line: 55
+  :message: ''
+  :unity_test_time: 0
+- :test: testTimerIsr_when_warnblinkenAndRichtungsblinkenIsActive
+  :line: 69
+  :message: ''
+  :unity_test_time: 0
+- :test: testTimerIsr_when_rechtsblinken
+  :line: 84
+  :message: ''
+  :unity_test_time: 0
+- :test: testTimerIsr_when_linksblinken
+  :line: 101
+  :message: ''
+  :unity_test_time: 0
+- :test: testTimerIsr_blinkenLaengerAlsDreiSekunden
+  :line: 118
+  :message: ''
+  :unity_test_time: 0
+- :test: testTimerIsr_blinkenKuerzerAlsDreiSekunden
+  :line: 135
+  :message: ''
+  :unity_test_time: 0
+- :test: testBlinken_when_countIsZero
+  :line: 152
+  :message: ''
+  :unity_test_time: 0
+- :test: testBlinken_when_countIsGreaterTen
+  :line: 160
+  :message: ''
+  :unity_test_time: 0
+- :test: testBlinken_when_countIsTwentyOne
+  :line: 168
+  :message: ''
+  :unity_test_time: 0
+:failures: []
+:ignores: []
+:counts:
+  :total: 10
+  :passed: 10
+  :failed: 0
+  :ignored: 0
+:stdout:
+- Requirement F1006 tested!
+- Requirement F1002.3 tested!
+- Requirement F1008 tested!
+- Requirement F1004 tested!
+- Requirement F1007 tested!
+- Requirement F1005.2 tested!
+- Requirement F1005.1 tested!
+- Requirement F1003 tested!
+- Requirement F1003 tested!
+- Requirement F1003 tested!
+:time: 0.023438700000042445

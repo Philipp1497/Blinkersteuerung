@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+    stages {
+		stage ('copy artifacts') {
+            steps{
+                copyArtifacts projectName: 'CI',
+				target: 'Target//copiedArtifacts'
+            }
+        }
+		stage ('run memory analysis') {
+            steps{
+                bat """
+					xcopy "Target\\Target\\bin\\*.map" "Tools\\memory\\mapfiles"
+                    cd Tools\\memory
+					%PYTHON% main.py
+                """
+				archiveArtifacts artifacts: 'Tools\\memory\\output\\output.txt', onlyIfSuccessful: true
+            }
+        }
+		stage ('archive artifacts in zip') {
+			steps{
+				bat """
+					tar.exe -a -c -f Blinkersteuerung.zip Target
+                """
+				archiveArtifacts artifacts: 'Blinkersteuerung.zip', onlyIfSuccessful: true
+			}
+		}
+    }
+    
+}
