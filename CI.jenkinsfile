@@ -17,10 +17,20 @@ pipeline {
 		stage ('run ceedling tests') {
 			steps{
 				bat """
-					ceedling gcov:all utils:gcov > Tools\\ReqCoverage\\log.txt
+					ceedling gcov:all utils:gcov > Tools\\ReqCoverage\\log.txt 2>NUL
 				"""
 			}
 		}
+		stage ('run static code analysis'){
+            steps{
+                bat """
+                    xcopy "Source\\src\\*.*" "Tools\\splint" /y
+                    cd Tools\\splint
+					del log.txt 2>NUL
+                    start.bat
+                """
+            }
+        }
 		stage ('calculate Requirements Coverage') {
 			steps{
 				bat """
@@ -34,6 +44,7 @@ pipeline {
         stage ('archive Artifacts'){
             steps{
                 archiveArtifacts artifacts: 'Target\\bin\\*.*', onlyIfSuccessful: true
+				archiveArtifacts artifacts: 'Tools\\splint\\log.txt', onlyIfSuccessful: true
             }
         }
 		stage ('results'){
