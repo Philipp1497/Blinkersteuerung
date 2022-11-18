@@ -45,7 +45,7 @@ pipeline {
             steps{
                 archiveArtifacts artifacts: 'Target\\bin\\*.*', onlyIfSuccessful: true
 				archiveArtifacts artifacts: 'Tools\\splint\\log.txt', onlyIfSuccessful: true
-				archiveArtifacts artifacts: 'build\\artifacts\\*.*', onlyIfSuccessful: true
+				archiveArtifacts artifacts: 'build\\artifacts\\gcov\\*.*', onlyIfSuccessful: true
             }
         }
 		stage ('results'){
